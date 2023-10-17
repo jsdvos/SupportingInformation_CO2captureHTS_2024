@@ -1,0 +1,27 @@
+data_COF-1_co2_298K_HP_uff_mm3
+_audit_aif_version 63df4e8
+_exptl_method GCMC
+_exptl_adsorptive co2
+_exptl_temperature 298
+_adsnt_material_id COF-1
+_simltn_code RASPA 2.0.41
+_simltn_date 2023-03-06T12:03:34.333333504
+_simltn_size 3.3.5
+_simltn_forcefield_adsorptive mm3
+_simltn_forcefield_adsorbent uff
+_units_temperature K
+_units_pressure Pa
+_units_loading mg/g
+
+loop_
+_adsorp_pressure
+_adsorp_amount_absolute
+1000000.0 276.68407876315604
+1500000.0 284.39941662408796
+2000000.0 290.719962135612
+250000.0 236.926213955206
+3000000.0 303.046910737604
+4000000.0 300.018577798692
+500000.0 256.390478363371
+5000000.0 305.798798346008
+750000.0 270.740504156927

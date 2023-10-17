@@ -1,0 +1,25 @@
+data_COF-5_co2_273K_LP_dreiding_trappe
+_audit_aif_version 63df4e8
+_exptl_method GCMC
+_exptl_adsorptive co2
+_exptl_temperature 273
+_adsnt_material_id COF-5
+_simltn_code RASPA 2.0.41
+_simltn_date 2023-03-06T12:15:53.571428352
+_simltn_size 2.2.4
+_simltn_forcefield_adsorptive trappe
+_simltn_forcefield_adsorbent dreiding
+_units_temperature K
+_units_pressure Pa
+_units_loading cm^3/g
+
+loop_
+_adsorp_pressure
+_adsorp_amount_absolute
+13332.0 5.131061590077
+26664.0 10.661456901564
+39997.0 16.432959365644003
+53329.0 22.03116606380701
+66661.0 27.230039040538
+79993.0 33.90569332660299
+93326.0 39.616919002506

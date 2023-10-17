@@ -1,0 +1,26 @@
+data_COF-1_co2_273K_HP_uff_trappe
+_audit_aif_version 63df4e8
+_exptl_method GCMC
+_exptl_adsorptive co2
+_exptl_temperature 273
+_adsnt_material_id COF-1
+_simltn_code RASPA 2.0.41
+_simltn_date 2023-03-06T12:05:13.375000064
+_simltn_size 3.3.5
+_simltn_forcefield_adsorptive trappe
+_simltn_forcefield_adsorbent uff
+_units_temperature K
+_units_pressure Pa
+_units_loading mg/g
+
+loop_
+_adsorp_pressure
+_adsorp_amount_absolute
+1000000.0 284.625599167249
+1500000.0 292.014228910338
+2000000.0 293.34619277559
+250000.0 257.747573622304
+2500000.0 296.47505128924803
+3000000.0 303.222830493402
+3500000.0 303.76315545760804
+500000.0 272.826409832691

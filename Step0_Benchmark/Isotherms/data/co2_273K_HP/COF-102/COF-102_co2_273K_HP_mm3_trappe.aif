@@ -1,0 +1,26 @@
+data_COF-102_co2_273K_HP_mm3_trappe
+_audit_aif_version 63df4e8
+_exptl_method GCMC
+_exptl_adsorptive co2
+_exptl_temperature 273
+_adsnt_material_id COF-102
+_simltn_code RASPA 2.0.41
+_simltn_date 2023-03-06T12:56:47.875000064
+_simltn_size 2.2.2
+_simltn_forcefield_adsorptive trappe
+_simltn_forcefield_adsorbent mm3
+_units_temperature K
+_units_pressure Pa
+_units_loading mg/g
+
+loop_
+_adsorp_pressure
+_adsorp_amount_absolute
+1000000.0 1266.208365696018
+1500000.0 1449.7063167865876
+2000000.0 1519.2768969340898
+250000.0 132.19384151219697
+2500000.0 1570.5485424059966
+3000000.0 1605.285136320058
+3500000.0 1629.2436468888188
+500000.0 420.84303343234
