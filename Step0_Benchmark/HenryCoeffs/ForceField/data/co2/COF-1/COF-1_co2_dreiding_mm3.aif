@@ -1,0 +1,23 @@
+data_COF-1_co2_dreiding_mm3
+_audit_aif_version 6acf6ef
+_exptl_method WidomInsertion
+_exptl_adsorptive co2
+_exptl_temperature 298
+_adsnt_material_id COF-1
+_simltn_code RASPA 2.0.41
+_simltn_date 2023-03-15T12:21:58
+_simltn_size 3.3.5
+_simltn_forcefield_adsorptive mm3
+_simltn_forcefield_adsorbent dreiding
+_units_temperature K
+_units_pressure Pa
+_units_henry mol/kg/bar
+_units_enthalpy kJ/mol
+
+loop_
+_adsorp_pressure
+_adsorp_henry
+_adsorp_henry_uncertainty
+_adsorp_enthalpy
+_adsorp_enthalpy_uncertainty
+0 12.7196 0.0589915 -24.4039142623 0.0137033036

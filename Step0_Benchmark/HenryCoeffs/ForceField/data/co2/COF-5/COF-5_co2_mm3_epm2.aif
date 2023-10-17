@@ -1,0 +1,23 @@
+data_COF-5_co2_mm3_epm2
+_audit_aif_version 6acf6ef
+_exptl_method WidomInsertion
+_exptl_adsorptive co2
+_exptl_temperature 298
+_adsnt_material_id COF-5
+_simltn_code RASPA 2.0.41
+_simltn_date 2023-03-15T12:21:59
+_simltn_size 2.2.4
+_simltn_forcefield_adsorptive epm2
+_simltn_forcefield_adsorbent mm3
+_units_temperature K
+_units_pressure Pa
+_units_henry mol/kg/bar
+_units_enthalpy kJ/mol
+
+loop_
+_adsorp_pressure
+_adsorp_henry
+_adsorp_henry_uncertainty
+_adsorp_enthalpy
+_adsorp_enthalpy_uncertainty
+0 0.338881 0.00211532 -9.2258892719 0.0400852675

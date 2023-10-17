@@ -18,6 +18,10 @@ The following software packages are used to perform all relevant calculations.
 
 The SBU nomenclature within this data archive is somewhat different than the nomenclature used in the manuscript and the ReDD-COFFEE database. More specific, the following adaptions have to be made to the core linkers used in this data archive (data archive core linker id -> manuscript core linker id): 28 -> 26, 29 -> 27, 30 -> 28, 31 -> 29, 32 -> 30, 33 -> 31, 34 -> 32, 35 -> 34, 36 -> 33. Furthermore, the imide terminations are also given a separate id (data archive termination id -> manuscript termination id): 03-12 -> 03-07, 12-12 -> 09-07.
 
+Some tar-files are splitted in multiple smaller files. In these cases, the original file can be restored by running:
+
+`cat file.tar.xz.* | tar xvzf -`
+
 ## Step 0 - Benchmark
 
 ### Step 0a - Computation of the adsorption isotherms
