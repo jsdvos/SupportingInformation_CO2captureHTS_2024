@@ -1,0 +1,1680 @@
+Begin execution of Python Script
+Running demonstration for the adsorption of n2 in COF-5...
+
+_____/\\\________/\\\___/\\\\\\\\\______/\\\\\\\\\\\\\\\__/\\\\\\\\\\\\\\\______
+_____\///\\\____/\\\/__/\\\\\\\\\\\\\___\ \\\///////////__\ \\\///////////______
+________\///\\\/\\\/___/\\\/////////\\\__\ \\\_____________\ \\\________________
+___________\///\\\/____\ \\\_______\ \\\__\ \\\\\\\\\\\_____\ \\\\\\\\\\\_______
+______________\ \\\_____\ \\\\\\\\\\\\\\\__\ \\\///////______\ \\\///////_______
+_______________\ \\\_____\ \\\/////////\\\__\ \\\_____________\ \\\_____________
+________________\ \\\_____\ \\\_______\ \\\__\ \\\_____________\ \\\____________
+_________________\ \\\_____\ \\\_______\ \\\__\ \\\_____________\ \\\___________
+__________________\///______\///________\///___\///______________\///___________
+
+                  Welcome to Yaff 1.6.0 - Yet another force field
+
+                                   Written by
+      Toon Verstraelen(1)*, Louis Vanduyfhuys(1) and Steven Vandenbrande(1)
+
+(1) Center for Molecular Modeling, Ghent University Belgium.
+* mailto: Toon.Verstraelen@UGent.be
+
+In a not-too-distant future, this program will be renamed to NINJAFF, which
+stands for 'NINJAFF is not just another force field code'. Please, bear with us.
+
+
+    ENV User:           vsc44561
+    ENV Platform:       Linux-4.18.0-372.46.1.el8_6.x86_64-x86_64-with-glibc2.2.
+    ENV                 5
+    ENV Time:           2023-04-24T10:52:32.243001
+    ENV Python version: 3.8.2 (default, Jan 18 2022, 18:17:06) [GCC 9.3.0]
+    ENV YAFF version:   1.6.0
+    ENV Current Dir:    /kyukon/data/gent/vo/000/gvo00003/vsc44561/Juul_COFs_Imp
+    ENV                 _sampling/COF-5/N2_MM3
+    ENV Command line:   ab_initio_HC_AE_comp.py
+
+  UNITS The following units will be used below:
+  UNITS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  UNITS Kind          Conversion               Format Notation
+  UNITS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  UNITS        energy 3.808799176039228e-04    %10.1f kJ/mol
+  UNITS   temperature 1.000000000000000e+00    %10.1f K
+  UNITS        length 1.889726133921252e+00    %10.4f A
+  UNITS     invlength 5.291772082999999e-01    %10.5f A^-1
+  UNITS          area 3.571064861224962e+00    %10.3f A^2
+  UNITS        volume 6.748334594184680e+00    %10.3f A^3
+  UNITS          time 4.134137333664683e+01    %10.1f fs
+  UNITS          mass 1.822888627353289e+03    %10.5f amu
+  UNITS        charge 1.000000000000000e+00    %10.5f e
+  UNITS         force 2.015529714951779e-04    %10.1f kJ/mol/A
+  UNITS    forceconst 1.066572387803877e-04    %10.1f kJ/mol/A**2
+  UNITS      velocity 4.571028926719556e-02    %10.5f A/fs
+  UNITS  acceleration 1.105679022682005e-03    %10.5f A/fs**2
+  UNITS         angle 1.745329251994330e-02    %10.5f deg
+  UNITS            c6 1.000000000000000e+00    %10.5f E_h*a_0**6
+  UNITS            c8 1.000000000000000e+00    %10.5f E_h*a_0**6
+  UNITS           c12 1.000000000000000e+00    %10.5f E_h*a_0**12
+  UNITS     diffconst 8.637992821731958e-05    %10.5f A**2/ps
+  UNITS       density 1.626726283270276e+02    %10.3f g/cm^3
+  UNITS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  UNITS The internal data is divided by the corresponding conversion factor
+  UNITS before it gets printed on screen.
+
+    SYS Unit cell
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS Number of periodic dimensions: 3
+    SYS Cell parameter     a:    30.2410
+    SYS Cell parameter     b:    30.2407
+    SYS Cell parameter     c:     7.0601
+    SYS Cell parameter alpha:   90.00203
+    SYS Cell parameter  beta:   89.99708
+    SYS Cell parameter gamma:  119.99770
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    SYS Analysis of the bonds:
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS  First   Second   Count
+    SYS      1        6      48
+    SYS      5        6      12
+    SYS      5        8      24
+    SYS      6        6     120
+    SYS      6        8      24
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    SYS Analysis of the neighbors:
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS Number of first neighbors:     228
+    SYS Number of second neighbors:    384
+    SYS Number of third neighbors:     498
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS Element   Neighboring elements   Count
+    SYS       1                      6      48
+    SYS       5                  6,8,8      12
+    SYS       6                  1,6,6      48
+    SYS       6                  5,6,6      12
+    SYS       6                  6,6,6      24
+    SYS       6                  6,6,8      24
+    SYS       8                    5,6      24
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    SYS The following atom types are present in the system:
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS              Atom type   ID   Number of atoms
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS          C_C3_18-08-01    0        24
+    SYS         C_C2O_18-08-01    1        24
+    SYS           H_C_18-08-01    2        24
+    SYS         C_HC2_18-08-01    3        24
+    SYS         B_CO2_18-08-01    4        12
+    SYS          O_BC_18-08-01    5        24
+    SYS         C_BC2_01-01-01    6        12
+    SYS         C_HC2_01-01-01    7        24
+    SYS           H_C_01-01-01    8        24
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+    GEN Generating force field from pars_COF-5_mm3.txt
+
+ FPINIT Force part: valence
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    GEN WARNING!! Overwriting charges in system.
+
+ FPINIT Force part: pair_ei
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT   scalings:          1.000 1.000 1.000
+ FPINIT   real space cutoff:    10.0000
+ FPINIT   truncation:     none
+ FPINIT   alpha:                    0.35000
+ FPINIT   relative permittivity: 1.000
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT Force part: ewald_reci
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT   alpha:                    0.35000
+ FPINIT   gcut:                     0.38500
+ FPINIT   relative permittivity: 1.000
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT Force part: ewald_cor
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT   alpha:                0.35000
+ FPINIT   relative permittivity   1.000
+ FPINIT   scalings:          1.000 1.000 1.000
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT Force part: ewald_neut
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT   alpha:                      0.35000
+ FPINIT   relative permittivity:   1.000
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT Force part: pair_mm3cap
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT   scalings:          0.000 0.000 1.000
+ FPINIT   real space cutoff:    10.0000
+ FPINIT   truncation:     switch3     4.0000
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ FFINIT Force field with 6 parts: valence, pair_ei, ewald_reci, ewald_cor,
+ FFINIT                           ewald_neut, pair_mm3cap.
+ FFINIT Neighborlist present: True
+
+    SYS Unit cell
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS Number of periodic dimensions: 3
+    SYS Cell parameter     a:    30.2410
+    SYS Cell parameter     b:    30.2407
+    SYS Cell parameter     c:     7.0601
+    SYS Cell parameter alpha:   90.00203
+    SYS Cell parameter  beta:   89.99708
+    SYS Cell parameter gamma:  119.99770
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    SYS Analysis of the bonds:
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS  First   Second   Count
+    SYS      1        6      48
+    SYS      5        6      12
+    SYS      5        8      24
+    SYS      6        6     120
+    SYS      6        8      24
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    SYS Analysis of the neighbors:
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS Number of first neighbors:     228
+    SYS Number of second neighbors:    384
+    SYS Number of third neighbors:     498
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS Element   Neighboring elements   Count
+    SYS       1                      6      48
+    SYS       5                  6,8,8      12
+    SYS       6                  1,6,6      48
+    SYS       6                  5,6,6      12
+    SYS       6                  6,6,6      24
+    SYS       6                  6,6,8      24
+    SYS       8                    5,6      24
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    SYS The following atom types are present in the system:
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS              Atom type   ID   Number of atoms
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS          C_C3_18-08-01    0        24
+    SYS         C_C2O_18-08-01    1        24
+    SYS           H_C_18-08-01    2        24
+    SYS         C_HC2_18-08-01    3        24
+    SYS         B_CO2_18-08-01    4        12
+    SYS          O_BC_18-08-01    5        24
+    SYS         C_BC2_01-01-01    6        12
+    SYS         C_HC2_01-01-01    7        24
+    SYS           H_C_01-01-01    8        24
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+    GEN Generating force field from pars_n2_mm3.txt
+    GEN WARNING!! Overwriting charges in system.
+    GEN WARNING!! No charge defined for atom 0 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 1 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 2 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 3 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 4 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 5 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 6 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 7 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 8 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 9 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 10 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 11 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 12 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 13 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 14 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 15 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 16 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 17 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 18 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 19 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 20 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 21 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 22 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 23 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 24 with fftype B_CO2_18-08-01.
+    GEN WARNING!! No charge defined for atom 25 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 26 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 27 with fftype B_CO2_18-08-01.
+    GEN WARNING!! No charge defined for atom 28 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 29 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 30 with fftype B_CO2_18-08-01.
+    GEN WARNING!! No charge defined for atom 31 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 32 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 33 with fftype C_BC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 34 with fftype C_BC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 35 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 36 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 37 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 38 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 39 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 40 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 41 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 42 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 43 with fftype C_BC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 44 with fftype C_BC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 45 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 46 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 47 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 48 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 49 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 50 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 51 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 52 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 53 with fftype C_BC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 54 with fftype C_BC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 55 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 56 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 57 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 58 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 59 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 60 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 61 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 62 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 63 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 64 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 65 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 66 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 67 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 68 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 69 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 70 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 71 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 72 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 73 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 74 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 75 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 76 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 77 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 78 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 79 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 80 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 81 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 82 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 83 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 84 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 85 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 86 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 87 with fftype B_CO2_18-08-01.
+    GEN WARNING!! No charge defined for atom 88 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 89 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 90 with fftype B_CO2_18-08-01.
+    GEN WARNING!! No charge defined for atom 91 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 92 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 93 with fftype B_CO2_18-08-01.
+    GEN WARNING!! No charge defined for atom 94 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 95 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 96 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 97 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 98 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 99 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 100 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 101 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 102 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 103 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 104 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 105 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 106 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 107 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 108 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 109 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 110 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 111 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 112 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 113 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 114 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 115 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 116 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 117 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 118 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 119 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 120 with fftype B_CO2_18-08-01.
+    GEN WARNING!! No charge defined for atom 121 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 122 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 123 with fftype B_CO2_18-08-01.
+    GEN WARNING!! No charge defined for atom 124 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 125 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 126 with fftype B_CO2_18-08-01.
+    GEN WARNING!! No charge defined for atom 127 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 128 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 129 with fftype C_BC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 130 with fftype C_BC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 131 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 132 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 133 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 134 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 135 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 136 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 137 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 138 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 139 with fftype C_BC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 140 with fftype C_BC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 141 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 142 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 143 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 144 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 145 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 146 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 147 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 148 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 149 with fftype C_BC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 150 with fftype C_BC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 151 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 152 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 153 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 154 with fftype C_HC2_01-01-01.
+    GEN WARNING!! No charge defined for atom 155 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 156 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 157 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 158 with fftype H_C_01-01-01.
+    GEN WARNING!! No charge defined for atom 159 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 160 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 161 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 162 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 163 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 164 with fftype C_C3_18-08-01.
+    GEN WARNING!! No charge defined for atom 165 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 166 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 167 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 168 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 169 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 170 with fftype C_C2O_18-08-01.
+    GEN WARNING!! No charge defined for atom 171 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 172 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 173 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 174 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 175 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 176 with fftype H_C_18-08-01.
+    GEN WARNING!! No charge defined for atom 177 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 178 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 179 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 180 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 181 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 182 with fftype C_HC2_18-08-01.
+    GEN WARNING!! No charge defined for atom 183 with fftype B_CO2_18-08-01.
+    GEN WARNING!! No charge defined for atom 184 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 185 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 186 with fftype B_CO2_18-08-01.
+    GEN WARNING!! No charge defined for atom 187 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 188 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 189 with fftype B_CO2_18-08-01.
+    GEN WARNING!! No charge defined for atom 190 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge defined for atom 191 with fftype O_BC_18-08-01.
+    GEN WARNING!! No charge transfer parameter for atom pair (18,0) with fftype
+    GEN           (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (18,6) with fftype
+    GEN           (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (18,12) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (19,1) with fftype
+    GEN           (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (19,7) with fftype
+    GEN           (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (19,13) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (20,2) with fftype
+    GEN           (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (20,8) with fftype
+    GEN           (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (20,14) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (21,3) with fftype
+    GEN           (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (21,9) with fftype
+    GEN           (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (21,15) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (22,4) with fftype
+    GEN           (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (22,10) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (22,16) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (23,5) with fftype
+    GEN           (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (23,11) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (23,17) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (25,6) with fftype
+    GEN           (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (25,24) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (26,10) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (26,24) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (28,7) with fftype
+    GEN           (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (28,27) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (29,9) with fftype
+    GEN           (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (29,27) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (31,8) with fftype
+    GEN           (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (31,30) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (32,11) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (32,30) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (35,33) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (36,34) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (37,34) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (38,33) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (39,38) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (40,37) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (41,36) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (42,35) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (24,33) with
+    GEN           fftype (B_CO2_18-08-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (45,43) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (46,44) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (47,44) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (48,43) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (49,48) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (50,47) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (51,46) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (52,45) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (27,43) with
+    GEN           fftype (B_CO2_18-08-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (55,53) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (56,54) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (57,54) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (58,53) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (59,58) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (60,57) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (61,56) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (62,55) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (30,53) with
+    GEN           fftype (B_CO2_18-08-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (81,63) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (81,69) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (81,75) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (82,64) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (82,70) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (82,76) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (83,65) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (83,71) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (83,77) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (84,66) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (84,72) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (84,78) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (85,67) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (85,73) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (85,79) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (86,68) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (86,74) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (86,80) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (88,69) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (88,87) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (89,73) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (89,87) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (91,70) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (91,90) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (92,72) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (92,90) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (94,71) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (94,93) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (95,74) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (95,93) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (44,87) with
+    GEN           fftype (C_BC2_01-01-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (54,90) with
+    GEN           fftype (C_BC2_01-01-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (34,93) with
+    GEN           fftype (C_BC2_01-01-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (114,96) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (114,102) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (114,108) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (115,97) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (115,103) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (115,109) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (116,98) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (116,104) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (116,110) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (117,99) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (117,105) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (117,111) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (118,100) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (118,106) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (118,112) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (119,101) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (119,107) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (119,113) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (121,102) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (121,120) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (122,106) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (122,120) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (124,103) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (124,123) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (125,105) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (125,123) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (127,104) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (127,126) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (128,107) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (128,126) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (131,129) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (132,130) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (133,130) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (134,129) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (135,134) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (136,133) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (137,132) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (138,131) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (120,129) with
+    GEN           fftype (B_CO2_18-08-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (141,139) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (142,140) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (143,140) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (144,139) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (145,144) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (146,143) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (147,142) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (148,141) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (123,139) with
+    GEN           fftype (B_CO2_18-08-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (151,149) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (152,150) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (153,150) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (154,149) with
+    GEN           fftype (C_HC2_01-01-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (155,154) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (156,153) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (157,152) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (158,151) with
+    GEN           fftype (H_C_01-01-01,C_HC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (126,149) with
+    GEN           fftype (B_CO2_18-08-01,C_BC2_01-01-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (177,159) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (177,165) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (177,171) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (178,160) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (178,166) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (178,172) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (179,161) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (179,167) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (179,173) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (180,162) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (180,168) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (180,174) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (181,163) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (181,169) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (181,175) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (182,164) with
+    GEN           fftype (C_HC2_18-08-01,C_C3_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (182,170) with
+    GEN           fftype (C_HC2_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (182,176) with
+    GEN           fftype (C_HC2_18-08-01,H_C_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (184,165) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (184,183) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (185,169) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (185,183) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (187,166) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (187,186) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (188,168) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (188,186) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (190,167) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (190,189) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (191,170) with
+    GEN           fftype (O_BC_18-08-01,C_C2O_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (191,189) with
+    GEN           fftype (O_BC_18-08-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (140,183) with
+    GEN           fftype (C_BC2_01-01-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (150,186) with
+    GEN           fftype (C_BC2_01-01-01,B_CO2_18-08-01).
+    GEN WARNING!! No charge transfer parameter for atom pair (130,189) with
+    GEN           fftype (C_BC2_01-01-01,B_CO2_18-08-01).
+
+ FPINIT Force part: pair_ei
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT   scalings:          1.000 1.000 1.000
+ FPINIT   real space cutoff:    10.0000
+ FPINIT   truncation:     none
+ FPINIT   alpha:                    0.35000
+ FPINIT   relative permittivity: 1.000
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT Force part: ewald_reci
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT   alpha:                    0.35000
+ FPINIT   gcut:                     0.38500
+ FPINIT   relative permittivity: 1.000
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT Force part: ewald_cor
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT   alpha:                0.35000
+ FPINIT   relative permittivity   1.000
+ FPINIT   scalings:          1.000 1.000 1.000
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT Force part: ewald_neut
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT   alpha:                      0.35000
+ FPINIT   relative permittivity:   1.000
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT Force part: pair_mm3cap
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT   scalings:          0.000 0.000 1.000
+ FPINIT   real space cutoff:    10.0000
+ FPINIT   truncation:     switch3     4.0000
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ FFINIT Force field with 5 parts: pair_ei, ewald_reci, ewald_cor, ewald_neut,
+ FFINIT                           pair_mm3cap.
+ FFINIT Neighborlist present: True
+
+    SYS Unit cell
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS Number of periodic dimensions: 3
+    SYS Cell parameter     a:    30.2410
+    SYS Cell parameter     b:    30.2407
+    SYS Cell parameter     c:     7.0601
+    SYS Cell parameter alpha:   90.00203
+    SYS Cell parameter  beta:   89.99708
+    SYS Cell parameter gamma:  119.99770
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    SYS Analysis of the bonds:
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS  First   Second   Count
+    SYS      1        6      96
+    SYS      5        6      24
+    SYS      5        8      48
+    SYS      6        6     240
+    SYS      6        8      48
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    SYS Analysis of the neighbors:
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS Number of first neighbors:     456
+    SYS Number of second neighbors:    768
+    SYS Number of third neighbors:     996
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS Element   Neighboring elements   Count
+    SYS       1                      6      96
+    SYS       5                  6,8,8      24
+    SYS       6                  1,6,6      96
+    SYS       6                  5,6,6      24
+    SYS       6                  6,6,6      48
+    SYS       6                  6,6,8      48
+    SYS       8                    5,6      48
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    SYS The following atom types are present in the system:
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS              Atom type   ID   Number of atoms
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SYS          C_C3_18-08-01    0        48
+    SYS         C_C2O_18-08-01    1        48
+    SYS           H_C_18-08-01    2        48
+    SYS         C_HC2_18-08-01    3        48
+    SYS         B_CO2_18-08-01    4        24
+    SYS          O_BC_18-08-01    5        48
+    SYS         C_BC2_01-01-01    6        24
+    SYS         C_HC2_01-01-01    7        48
+    SYS           H_C_01-01-01    8        48
+    SYS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+    GEN Generating force field from pars_COF-5_n2_mm3.txt
+
+ FPINIT Force part: valence
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    GEN WARNING!! Overwriting charges in system.
+
+ FPINIT Force part: pair_ei
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT   scalings:          1.000 1.000 1.000
+ FPINIT   real space cutoff:    10.0000
+ FPINIT   truncation:     none
+ FPINIT   alpha:                    0.35000
+ FPINIT   relative permittivity: 1.000
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT Force part: ewald_reci
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT   alpha:                    0.35000
+ FPINIT   gcut:                     0.38500
+ FPINIT   relative permittivity: 1.000
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT Force part: ewald_cor
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT   alpha:                0.35000
+ FPINIT   relative permittivity   1.000
+ FPINIT   scalings:          1.000 1.000 1.000
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT Force part: ewald_neut
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT   alpha:                      0.35000
+ FPINIT   relative permittivity:   1.000
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT Force part: pair_mm3cap
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ FPINIT   scalings:          0.000 0.000 1.000
+ FPINIT   real space cutoff:    10.0000
+ FPINIT   truncation:     switch3     4.0000
+ FPINIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ FFINIT Force field with 6 parts: valence, pair_ei, ewald_reci, ewald_cor,
+ FFINIT                           ewald_neut, pair_mm3cap.
+ FFINIT Neighborlist present: True
+Energies: [-3.08543041e-03 -5.71602507e-03 -1.91653321e-03 -3.42604080e-03
+ -2.57419620e-03 -1.96353486e-04 -1.03571287e-03 -5.91818090e-03
+ -1.00877304e-03 -2.09654831e-03 -1.52878445e-03 -6.72093722e-05
+ -1.43516628e-03 -2.37207381e-03 -2.81473892e-03 -1.97101077e-03
+ -2.08868653e-03 -2.70721259e-05 -2.01640905e-03 -8.96698987e-04
+ -5.37649988e-05 -6.03580484e-04 -3.18061741e-05 -3.61972812e-03
+ -3.82969981e-03 -2.16543455e-03  1.17076003e-05 -2.23499992e-03
+ -2.77374761e-03  3.61536193e-05 -2.47509944e-03  3.22225440e-05
+ -3.30884720e-03 -2.99807469e-03 -4.50831911e-04  4.30297857e-06
+ -3.10253501e-03 -2.27736271e-03 -2.99088395e-03 -2.61087203e-03
+ -2.07965097e-03 -1.59142405e-03 -1.56191948e-03 -1.85536873e-03
+ -1.91715647e-03 -2.70212281e-04 -2.75295558e-03 -1.11045438e-05
+ -5.21311238e-05 -1.98810178e-03 -2.20580479e-04 -3.09645374e-03
+ -2.38280792e-03 -2.39941751e-03 -1.08183768e-04 -6.90232454e-04
+ -2.50270002e-03 -3.02561537e-03 -1.77419314e-03 -3.24095172e-03
+ -4.52123760e-03 -9.52186059e-04 -2.21603139e-03 -3.08137144e-03
+ -8.40352716e-04 -1.44054785e-03 -3.48926214e-03 -3.36355886e-03
+  3.42871211e-06 -1.40495797e-03 -1.64494760e-04 -3.12084206e-03
+ -8.06133213e-06 -2.30119722e-03 -8.92866767e-04 -1.76010015e-03
+ -1.20870003e-04 -3.00198261e-04 -2.49210225e-03 -7.41588902e-04
+ -3.33853698e-03 -2.46612709e-03 -6.36884193e-05 -1.64276469e-03
+ -2.08835946e-03 -1.98818410e-03 -4.27927709e-03 -2.56088927e-03
+ -3.16272049e-05 -2.44552285e-03 -1.07964485e-03 -2.35562481e-03
+ -2.15613771e-03 -2.60008684e-03 -1.61563634e-04 -8.73365738e-04
+  2.83638647e-05 -9.54255414e-04 -6.90910479e-04 -2.22478876e-03
+ -2.19144793e-03 -9.30560184e-04 -1.82067185e-04 -1.83892157e-04
+ -1.51187462e-04 -2.42070566e-03 -7.12429047e-04 -2.35809106e-03
+ -5.69209574e-04 -2.58109773e-03 -7.13810087e-04 -3.44377933e-05
+ -2.41512895e-05 -2.41285637e-03 -1.11106810e-04 -1.22890224e-03
+ -2.50314359e-05 -2.10439539e-03 -2.50169934e-03 -6.17595207e-03
+ -2.48968304e-03 -3.55735790e-03 -1.65459430e-04 -1.95075197e-03
+ -1.83333935e-03 -6.67106838e-04 -3.01237165e-04 -3.43719753e-04
+ -1.68534577e-03 -2.07254916e-03 -1.95885042e-03 -9.17166524e-04
+ -6.10484947e-04 -1.56106139e-03  1.50569338e-05 -4.45681125e-05
+ -7.96188111e-04 -1.96913619e-03 -3.49254569e-05 -3.30519432e-03
+ -1.95730254e-03 -9.92882263e-05 -2.16362685e-03 -1.38827929e-04
+ -1.47136290e-03 -1.35894561e-03 -1.72624226e-03 -3.97732369e-03
+ -1.98170777e-03 -1.30185112e-03 -2.52457800e-03 -1.81297471e-03
+ -2.67982442e-03 -1.81148195e-03 -1.69192169e-03 -8.90683857e-04
+ -1.31853568e-03 -3.12794056e-03 -3.29010835e-04 -1.92460556e-03
+ -1.48113969e-03 -1.97215405e-03 -7.29997430e-04 -1.70854893e-03
+ -1.05591728e-03 -2.33052355e-03  1.39287295e-05  2.31682450e-05
+ -3.06062498e-03 -4.70267894e-04 -4.30419130e-05 -2.31837055e-03
+ -8.33658458e-06 -1.82253982e-03 -1.33697355e-03 -2.45999988e-03
+ -2.96434873e-03 -2.36973655e-03 -2.17096643e-05 -1.91868230e-06
+ -1.98215207e-04 -2.28932866e-04 -8.17147721e-04 -2.91111108e-03
+ -3.97388836e-05 -2.62029603e-03 -2.23199346e-03 -5.01931113e-04
+ -3.72506198e-03 -1.23932030e-03 -8.31791593e-05 -2.16467715e-03
+ -1.16693369e-03 -8.68750390e-05 -2.37096471e-03 -2.47055612e-03
+ -2.42721580e-03 -8.59751950e-04 -1.90602363e-03 -3.54927562e-04
+ -7.33365873e-05 -2.92881617e-03 -1.73394455e-03 -2.58257174e-03
+ -2.87650718e-03 -1.09189413e-03  2.22201124e-05 -6.27905598e-04
+ -1.91483980e-03 -2.08549117e-03 -2.37722349e-03 -7.63116290e-04
+ -1.36571042e-03 -2.49035115e-03 -2.98842211e-04 -5.36817248e-04
+ -2.34793428e-03 -2.65265197e-03  9.91129320e-04 -2.18916910e-03
+ -3.94738070e-03  3.55942946e-05 -2.77017889e-04 -1.86234596e-03
+ -1.14599906e-03 -2.31763850e-03 -2.09028328e-03 -1.33547271e-03
+ -4.25924687e-05 -1.38366173e-03 -3.81595887e-03 -4.47754154e-04
+ -3.01598043e-05 -7.18074479e-05 -8.51860400e-05 -1.07107785e-03
+ -2.17463548e-03 -1.88605111e-03  2.20146837e-05 -4.12366024e-04
+ -7.67129316e-04 -1.22320756e-03 -1.18103220e-03 -2.74738402e-03
+ -3.27750737e-03 -2.14376274e-03 -2.58907784e-03 -2.82936147e-03
+ -2.42768546e-03 -2.20963480e-03 -3.41605711e-03 -2.71595342e-03
+ -2.31299486e-03 -1.02219132e-03 -3.44510231e-05 -1.65607162e-03
+ -1.71211177e-03 -1.23276349e-03 -3.02757558e-03 -2.56123729e-03
+ -2.28008363e-03 -1.34654932e-03  7.61997273e-06 -1.96277635e-03
+ -2.37798420e-03 -1.77240639e-03 -1.77508395e-03 -1.66522515e-03
+ -1.84974425e-04 -2.11094412e-03 -1.22521591e-03 -1.63131470e-03
+  2.80107037e-05 -2.13489109e-03 -7.57452484e-04 -2.76298594e-03
+ -1.35987206e-05 -1.95899080e-03 -2.21107538e-03 -2.29875706e-03
+ -2.75656179e-03 -3.25099163e-03 -2.08684832e-03 -2.95055781e-03
+ -1.67901606e-03 -1.67831599e-04 -1.35761932e-04 -3.81273962e-03
+ -5.15856903e-04 -2.14636422e-03 -2.10912540e-03 -2.01360655e-03
+ -2.16201503e-03 -2.52634197e-03 -2.10502344e-03 -3.04157744e-03
+ -6.83494098e-04  3.80824812e-04 -1.07876581e-03 -4.36534218e-05
+ -9.52175034e-06 -1.13246870e-03 -2.11213186e-03  2.90161653e-05
+ -2.02586760e-03 -5.24534154e-05 -1.33508721e-03 -8.88514177e-05
+ -6.89425807e-04 -4.21669262e-03 -1.93916969e-03 -8.07672275e-04
+ -2.81436407e-03 -1.26214274e-03 -3.61008767e-03 -1.47425617e-03
+ -2.71783793e-03 -3.92896966e-04 -3.25797841e-04 -4.15770702e-03
+ -2.86077700e-04 -3.79577540e-04 -2.89625590e-03 -1.20287747e-03
+ -4.71543831e-04 -6.57869895e-04 -1.45797512e-03 -1.71338955e-04
+ -2.31176155e-03 -1.65549907e-03 -1.78201818e-03  8.18039994e-07
+ -2.72980314e-03 -6.49459812e-05 -4.63306432e-03 -1.53246453e-03
+ -9.41511483e-04 -2.57626004e-04 -6.93530964e-03 -3.88414393e-03
+ -1.60606204e-03 -1.19151531e-03 -2.70919926e-03 -1.63578600e-03
+ -1.28616908e-03 -1.65263960e-03  1.93878419e-05 -2.78813975e-03
+ -4.46180916e-05 -2.47994227e-03 -6.62623421e-05 -2.24819661e-03
+ -1.27433800e-03 -5.54204089e-04  2.27698823e-06 -4.06278498e-05
+ -1.74584288e-04 -1.82217674e-03 -9.74140107e-05 -1.23047952e-03
+ -1.76106408e-03 -2.13735439e-03 -6.49449155e-04 -2.52733750e-03
+ -2.60964717e-03 -2.17689336e-03 -2.44015855e-03 -2.95442568e-03
+ -2.47900883e-03  7.99775580e-06 -2.83227055e-05 -1.64954127e-03
+ -3.31325124e-03 -3.59154690e-03 -1.37419070e-03 -2.57283537e-03
+  2.14009700e-05 -2.46967377e-03 -8.59690946e-04 -4.87770495e-04
+ -6.74239883e-06 -8.68598983e-04 -2.41437081e-03 -1.78756806e-04
+ -1.55100530e-05 -2.30092307e-03 -2.24681704e-03 -1.65885869e-03
+ -5.47240827e-04 -3.59535193e-04 -1.42435242e-03 -6.97680073e-04
+  1.98868977e-05 -1.96306189e-03 -2.52130510e-04 -3.05996680e-03
+ -2.71529744e-05 -3.65834431e-03 -1.88213804e-03 -2.38109871e-03
+ -1.49202263e-03 -1.79574368e-03  2.30521172e-05 -1.14673479e-03
+ -8.65363572e-04 -2.40464951e-03 -4.26101709e-03 -3.20134476e-03
+ -1.41657884e-03 -6.11751329e-05  2.59336318e-05 -5.40582583e-06
+  1.16028647e-05 -2.47508070e-03 -4.77157658e-04 -2.78966706e-03
+ -1.47581434e-03 -2.73617106e-05 -5.19974371e-03 -2.41608958e-03
+ -1.08290341e-04  3.65604344e-05  1.35744660e-05 -5.03535221e-04
+ -8.98100239e-04 -1.26827546e-03 -1.64278490e-03 -2.49169397e-03
+ -3.79335362e-03 -2.48113919e-03 -2.35038583e-03 -1.58983170e-03
+ -3.71806969e-03 -5.33890165e-04 -2.97337547e-03 -1.75657368e-03
+  3.31567118e-05 -2.20665113e-03 -9.69976776e-04 -8.52316091e-05
+  1.07925420e-05 -2.92952690e-03 -3.68442494e-04 -2.61832700e-03
+ -4.59135053e-05 -3.21651378e-03 -2.51588715e-03 -2.19242069e-04
+ -1.89271523e-04 -1.73489268e-03 -1.96101753e-05 -3.00158645e-03
+ -1.40071930e-03 -6.75537134e-05 -1.55647691e-03 -2.44882588e-03
+ -2.32084010e-03 -1.53046610e-04 -1.60767497e-03 -1.96906563e-05
+ -1.84378681e-03 -1.33928141e-04  1.94036441e-06 -1.24694138e-05
+ -2.06406411e-03 -2.78572826e-03 -6.96925242e-04 -2.94600383e-03
+ -1.42860101e-03 -1.89308677e-03 -4.65452262e-05 -9.04066492e-05
+ -3.40536526e-04 -2.95293035e-03 -1.05937245e-03 -1.61614201e-03
+ -5.27169815e-04 -1.71602153e-03 -7.61583108e-04 -1.50315768e-04
+ -2.17014545e-03 -3.09196995e-03 -9.12367430e-04 -3.97884951e-06
+ -1.36478544e-04 -2.10309594e-03 -2.13419395e-03 -2.84129618e-03
+ -7.28981678e-05 -3.31641646e-03 -9.81036485e-04 -2.65446077e-03
+ -3.12687225e-03 -2.79280177e-04 -2.55173722e-03 -4.41782022e-05
+ -4.40003722e-04 -4.25704118e-03 -1.38698203e-04 -9.58054927e-07
+ -1.65224896e-03 -1.05634137e-03 -1.58701596e-04 -1.46921306e-03
+ -2.98175394e-03 -1.11550447e-03 -2.38730604e-04 -2.87392628e-03
+ -8.59811851e-04 -1.50263584e-03 -5.16407077e-03 -7.52993680e-07
+ -1.42321136e-03 -5.44205700e-04 -1.80887789e-03 -1.83915677e-05
+ -7.04925570e-05 -1.35068840e-04 -1.15211636e-03 -2.10362586e-03
+ -1.76243667e-03  9.42999095e-04 -1.63996770e-03 -4.47378209e-04
+ -2.41757205e-03 -1.15646417e-03 -1.82435450e-03 -5.95875620e-05
+ -2.51386851e-03 -6.36626948e-05 -3.15694937e-03 -3.01823206e-03
+ -3.32592535e-03 -2.72266201e-04 -3.29646231e-04 -1.41075628e-03
+ -1.57877530e-03 -2.59520947e-03 -2.35765888e-03 -1.62399865e-03
+ -1.58792478e-03 -2.59297437e-03 -2.47997938e-03 -9.10255078e-04
+ -4.02190613e-03 -1.85878091e-06 -4.23085067e-04 -1.10417025e-04
+ -1.03414036e-03 -1.74409434e-03 -2.65238811e-03 -3.58010096e-03
+ -1.03015710e-05 -3.29873783e-03 -2.09003964e-03 -3.66330143e-03
+ -1.27025809e-03 -2.42375549e-03 -8.12955726e-04 -4.11203753e-03
+ -1.74328145e-04 -1.91306627e-03 -1.99109024e-03 -1.52343118e-03
+ -3.07430308e-03 -2.63828078e-03 -2.09187673e-03 -1.89986408e-03
+ -3.51711041e-03 -2.09750453e-05 -2.76431811e-03 -2.31738971e-03
+ -4.36235703e-03 -2.14612388e-05 -1.52131185e-04 -2.15241169e-04
+ -1.58933485e-05 -3.29358190e-03 -2.56721971e-03  3.65189077e-05
+ -1.98436364e-03 -2.55904482e-03 -3.36885076e-03 -1.76425943e-03
+ -1.07401669e-03 -2.03515746e-03 -2.57692815e-03 -2.71380579e-03
+ -2.46666069e-03 -3.40336757e-03 -3.25720521e-03 -1.50660513e-03
+ -1.61839474e-03 -2.00154322e-03 -9.39805211e-05 -2.29453383e-03
+ -2.40211528e-03 -1.75518529e-03 -8.96585064e-04 -1.23798593e-03
+ -1.15395897e-03 -1.79097105e-03 -6.21210605e-05 -2.27998551e-03
+ -1.91514004e-03 -6.79377438e-05 -6.05891281e-04 -5.41139337e-04
+ -1.06534569e-03 -2.22013445e-03 -1.54426180e-04 -2.09246546e-03
+ -3.08960035e-04 -1.79855611e-03 -5.31523875e-04 -7.74711070e-04
+ -9.26711794e-04 -2.75193027e-03  1.02247650e-05  3.10917672e-05
+ -3.43151130e-03  1.99034349e-05 -1.66661868e-03 -4.36351059e-03
+ -1.82567307e-03 -2.47335164e-03 -3.38361701e-04 -1.59036934e-03
+ -5.79330706e-04  3.14971123e-05 -3.58961609e-03 -6.88528021e-05
+  3.21185434e-05 -2.16097686e-03 -3.36757593e-04 -2.71582553e-03
+ -6.46479442e-05 -2.35395345e-03 -1.48780638e-03 -2.29944281e-03
+ -2.12298320e-03  7.90698496e-06 -3.04131909e-03 -1.14440341e-04
+ -3.29155407e-03 -6.47627491e-04 -2.70366739e-03 -2.01581886e-03
+ -2.35617752e-03  1.78550275e-05 -4.24735112e-04 -1.20916307e-05
+ -2.50997894e-07 -9.52628889e-04 -2.01752403e-03 -1.44253856e-03
+ -1.72028740e-04 -2.46460677e-03 -1.27182361e-03 -1.83315413e-03
+  3.12810262e-05 -1.10923945e-03 -1.63441267e-03 -6.54170341e-04
+ -1.33440073e-03 -2.05349353e-03 -2.16195954e-03 -7.24860242e-04
+ -3.19709250e-03 -1.72264009e-03 -1.95930428e-03 -3.24552627e-03
+ -6.43229331e-04 -4.25889702e-03 -2.76051345e-03 -2.90760262e-03
+ -2.02411869e-03  1.37769548e-05 -3.38073660e-03 -6.53035515e-07
+ -3.49089417e-03 -1.90454558e-03 -2.26202758e-04 -4.40425971e-05
+ -2.38244410e-03 -1.37364497e-03 -4.01716436e-04 -2.73597041e-03
+ -2.55781923e-03 -6.06521900e-05 -8.15548391e-04 -3.01100053e-03
+ -3.01999199e-03 -1.08694216e-04 -1.12485277e-04 -3.45942242e-03
+ -6.95715086e-04 -2.27158976e-04 -1.92519318e-03 -3.46269384e-03
+ -2.41859478e-03 -1.31099215e-03 -3.15589393e-03 -1.02816970e-03
+ -3.13212998e-03 -1.38413323e-03 -1.46856554e-04 -2.78630412e-03
+ -3.78580531e-05 -2.11655574e-03 -7.09919803e-05 -1.59399650e-03
+ -1.63453652e-03 -5.66658068e-04 -9.07190185e-05 -5.12546524e-04
+ -1.53647609e-03 -1.61118122e-03 -2.12497428e-03 -2.28169876e-03
+ -5.99381506e-05 -4.15168160e-05 -3.12247704e-03 -8.75038199e-06
+ -1.63593299e-04  1.88366020e-05 -1.07007055e-04 -2.94174936e-03
+ -3.19598193e-03 -2.57977108e-03  3.49074497e-05 -1.44077386e-03
+ -3.07025147e-03 -4.44444878e-04 -2.53733516e-03 -1.83411145e-03
+ -6.69665694e-04 -1.33458815e-03 -1.08103177e-03 -3.33568560e-03
+ -1.04362720e-03 -2.64736926e-03 -7.69475761e-05 -1.01500903e-04
+ -1.82802870e-03 -7.24244690e-05 -1.86285898e-03 -1.97279900e-03
+ -1.97067305e-03 -1.42454499e-03 -7.21593962e-04 -8.80305848e-04
+ -2.95149639e-03 -1.31097083e-03 -1.30515745e-03 -2.24909476e-03
+  1.19207463e-05 -1.41841300e-03 -3.45483500e-03 -4.12782026e-04
+ -7.92018532e-04 -2.19675711e-04 -4.58235430e-04 -3.45774040e-04
+ -2.98871243e-03 -1.83656924e-03 -5.86065828e-03 -5.87365505e-03
+ -2.12864003e-03 -4.22445261e-04  6.63950072e-06 -1.10522532e-03
+ -2.25522198e-03 -1.70938571e-03  1.42521383e-03 -1.99066284e-03
+ -1.00657469e-03 -2.51810681e-03 -5.43430290e-04 -2.40028847e-03
+  1.44399126e-05 -2.14757328e-03 -2.11929871e-03 -2.82096131e-03
+ -1.13398130e-03 -7.44783889e-05 -1.40172109e-03  7.05660556e-06
+ -2.15447076e-03  3.63072315e-05 -1.89627624e-03 -3.14144263e-03
+ -1.40913049e-03  1.77388996e-05 -1.20668249e-04 -1.11841429e-03
+ -1.25572447e-05 -2.57842605e-03 -1.13265281e-03 -1.66272399e-03
+ -1.39033247e-03 -3.74895308e-04 -1.26363660e-04 -2.85438005e-03
+ -6.51357915e-04 -2.10460780e-03 -1.60904682e-03  2.83984091e-05
+ -1.36807892e-03 -2.91970601e-03 -2.53112048e-03  3.83185221e-06
+ -2.50800552e-04 -2.24715697e-03 -5.66862027e-05  3.33742678e-05
+  2.30929089e-05 -1.76253369e-03 -2.05362069e-03 -7.01156191e-04
+ -1.87223777e-03 -1.22525634e-03 -2.31158736e-03 -2.84189005e-03
+ -2.24745942e-03 -4.09620922e-03 -5.19395863e-04  1.88443193e-05
+  2.41454096e-05 -1.51122783e-04 -1.07287452e-03 -5.65531702e-04
+ -1.53623905e-03  3.47328904e-05 -6.64960678e-05 -7.06608395e-03
+ -2.51192373e-03 -1.81904202e-03 -5.22887784e-05  3.37605032e-05
+ -2.77208030e-03 -8.81796400e-05 -1.80459807e-03 -2.31704132e-04
+ -2.81122862e-03 -1.27737166e-03 -1.98457275e-03 -2.55339425e-03
+  4.64556314e-04 -8.56998323e-04 -2.69319309e-03 -2.33898508e-03
+ -1.94598706e-05 -3.24957384e-03 -1.77197900e-04 -7.30131932e-04
+ -2.60207387e-03  1.49172864e-05 -2.37098492e-03 -3.48154661e-04
+ -7.00875794e-05 -1.77328691e-03 -8.31663705e-04 -7.84920400e-04
+ -1.21092888e-03 -3.83661125e-03 -9.95517190e-05 -4.43964564e-04
+  2.01625177e-05 -4.62133431e-04 -1.96071031e-03 -6.46516191e-05
+ -3.18985913e-03 -2.41520392e-03 -2.89257987e-04 -1.15339229e-04
+ -7.69742193e-04 -3.33942484e-03 -1.84007660e-03 -1.50779177e-03
+ -2.75408305e-03 -9.30605018e-04 -3.01362957e-03 -1.94736148e-04
+ -2.86755872e-03  7.92168470e-06 -2.64825565e-04 -3.38830990e-04
+ -2.83975933e-03 -2.19775669e-05 -3.39317661e-03 -7.80566707e-05
+ -1.18504633e-03 -3.77907283e-03 -6.32826700e-04 -2.38951467e-05
+ -1.62444258e-03 -1.80574685e-03 -1.63662976e-03 -1.57845337e-03
+ -3.46665468e-03 -1.23057323e-04 -2.02500435e-03 -1.20047406e-03
+ -2.59825819e-04 -1.63994822e-03  3.68331144e-05 -6.32115233e-04
+ -2.32414975e-03 -2.64321658e-03 -1.79067264e-03 -2.03507698e-03
+  8.96793801e-06 -3.28102392e-04 -1.22165784e-05 -4.35625774e-04
+ -2.71596040e-03 -1.92911544e-04 -4.18464575e-06 -1.69684831e-03
+ -2.26713868e-03 -1.95572342e-03 -3.83927925e-04 -3.51971005e-03
+ -2.02485405e-03 -2.80367480e-03 -1.11374198e-03 -2.19680561e-03
+ -1.69390505e-04 -1.81317609e-03 -2.16106837e-03 -2.16848438e-03
+ -4.23892817e-03 -1.60793662e-03 -7.69671267e-04 -1.66371548e-04
+ -2.19273893e-03 -2.16133333e-03 -7.75782680e-04 -3.94884149e-03
+ -1.63786270e-03 -1.91096201e-03 -3.61699728e-04 -2.13652827e-03
+ -1.19670137e-03 -1.36816932e-03 -2.55731944e-03 -2.81731688e-03
+ -2.32290247e-03 -3.85288496e-03 -4.11702699e-06 -2.50450331e-05
+ -2.14965660e-03 -7.06276108e-04 -2.31564485e-04 -3.37789882e-04
+ -3.05456465e-03 -2.75286775e-03 -1.10063900e-03 -1.71442698e-03
+ -1.70404787e-04 -4.29393824e-05 -3.24112370e-03 -2.57197912e-03
+ -2.32257614e-03 -1.28331954e-04 -9.51089827e-04 -1.12414240e-03
+ -7.15252130e-06 -2.09353597e-03 -1.09803274e-03 -2.02827982e-04
+ -2.16176476e-03 -2.29944722e-03  1.83886277e-05 -1.75579937e-03
+ -1.81152127e-04 -3.06813176e-03 -2.34368385e-03 -3.13642340e-03
+ -5.41881893e-03 -3.59511820e-03 -9.61380741e-05 -2.31262920e-03
+ -2.01206014e-03 -1.87902243e-03 -2.69834131e-03 -8.11232550e-04
+  1.95488039e-05 -3.36383742e-03 -8.59482945e-04 -1.46083127e-03
+ -2.07638322e-03 -1.97710969e-03 -1.65184545e-05 -2.59485814e-03
+ -8.01116195e-04 -6.81990315e-05 -3.32615540e-03]
+Energies_ai: [-3.08543041e-03 -5.71602507e-03 -1.91653321e-03 -3.42604080e-03
+ -2.57419620e-03 -1.96353486e-04 -1.03571287e-03 -5.91818090e-03
+ -1.00877304e-03 -2.09654831e-03 -1.52878445e-03 -6.72093722e-05
+ -1.43516628e-03 -2.37207381e-03 -2.81473892e-03 -1.97101077e-03
+ -2.08868653e-03 -2.70721259e-05 -2.01640905e-03 -8.96698987e-04
+ -5.37649988e-05 -6.03580484e-04 -3.18061741e-05 -3.61972812e-03
+ -3.82969981e-03 -2.16543455e-03  1.17076003e-05 -2.23499992e-03
+ -2.77374761e-03  3.61536193e-05 -2.47509944e-03  3.22225440e-05
+ -3.30884720e-03 -2.99807469e-03 -4.50831911e-04  4.30297857e-06
+ -3.10253501e-03 -2.27736271e-03 -2.99088395e-03 -2.61087203e-03
+ -2.07965097e-03 -1.59142405e-03 -1.56191948e-03 -1.85536873e-03
+ -1.91715647e-03 -2.70212281e-04 -2.75295558e-03 -1.11045438e-05
+ -5.21311238e-05 -1.98810178e-03 -2.20580479e-04 -3.09645374e-03
+ -2.38280792e-03 -2.39941751e-03 -1.08183768e-04 -6.90232454e-04
+ -2.50270002e-03 -3.02561537e-03 -1.77419314e-03 -3.24095172e-03
+ -4.52123760e-03 -9.52186059e-04 -2.21603139e-03 -3.08137144e-03
+ -8.40352716e-04 -1.44054785e-03 -3.48926214e-03 -3.36355886e-03
+  3.42871211e-06 -1.40495797e-03 -1.64494760e-04 -3.12084206e-03
+ -8.06133213e-06 -2.30119722e-03 -8.92866767e-04 -1.76010015e-03
+ -1.20870003e-04 -3.00198261e-04 -2.49210225e-03 -7.41588902e-04
+ -3.33853698e-03 -2.46612709e-03 -6.36884193e-05 -1.64276469e-03
+ -2.08835946e-03 -1.98818410e-03 -4.27927709e-03 -2.56088927e-03
+ -3.16272049e-05 -2.44552285e-03 -1.07964485e-03 -2.35562481e-03
+ -2.15613771e-03 -2.60008684e-03 -1.61563634e-04 -8.73365738e-04
+  2.83638647e-05 -9.54255414e-04 -6.90910479e-04 -2.22478876e-03
+ -2.19144793e-03 -9.30560184e-04 -1.82067185e-04 -1.83892157e-04
+ -1.51187462e-04 -2.42070566e-03 -7.12429047e-04 -2.35809106e-03
+ -5.69209574e-04 -2.58109773e-03 -7.13810087e-04 -3.44377933e-05
+ -2.41512895e-05 -2.41285637e-03 -1.11106810e-04 -1.22890224e-03
+ -2.50314359e-05 -2.10439539e-03 -2.50169934e-03 -6.17595207e-03
+ -2.48968304e-03 -3.55735790e-03 -1.65459430e-04 -1.95075197e-03
+ -1.83333935e-03 -6.67106838e-04 -3.01237165e-04 -3.43719753e-04
+ -1.68534577e-03 -2.07254916e-03 -1.95885042e-03 -9.17166524e-04
+ -6.10484947e-04 -1.56106139e-03  1.50569338e-05 -4.45681125e-05
+ -7.96188111e-04 -1.96913619e-03 -3.49254569e-05 -3.30519432e-03
+ -1.95730254e-03 -9.92882263e-05 -2.16362685e-03 -1.38827929e-04
+ -1.47136290e-03 -1.35894561e-03 -1.72624226e-03 -3.97732369e-03
+ -1.98170777e-03 -1.30185112e-03 -2.52457800e-03 -1.81297471e-03
+ -2.67982442e-03 -1.81148195e-03 -1.69192169e-03 -8.90683857e-04
+ -1.31853568e-03 -3.12794056e-03 -3.29010835e-04 -1.92460556e-03
+ -1.48113969e-03 -1.97215405e-03 -7.29997430e-04 -1.70854893e-03
+ -1.05591728e-03 -2.33052355e-03  1.39287295e-05  2.31682450e-05
+ -3.06062498e-03 -4.70267894e-04 -4.30419130e-05 -2.31837055e-03
+ -8.33658458e-06 -1.82253982e-03 -1.33697355e-03 -2.45999988e-03
+ -2.96434873e-03 -2.36973655e-03 -2.17096643e-05 -1.91868230e-06
+ -1.98215207e-04 -2.28932866e-04 -8.17147721e-04 -2.91111108e-03
+ -3.97388836e-05 -2.62029603e-03 -2.23199346e-03 -5.01931113e-04
+ -3.72506198e-03 -1.23932030e-03 -8.31791593e-05 -2.16467715e-03
+ -1.16693369e-03 -8.68750390e-05 -2.37096471e-03 -2.47055612e-03
+ -2.42721580e-03 -8.59751950e-04 -1.90602363e-03 -3.54927562e-04
+ -7.33365873e-05 -2.92881617e-03 -1.73394455e-03 -2.58257174e-03
+ -2.87650718e-03 -1.09189413e-03  2.22201124e-05 -6.27905598e-04
+ -1.91483980e-03 -2.08549117e-03 -2.37722349e-03 -7.63116290e-04
+ -1.36571042e-03 -2.49035115e-03 -2.98842211e-04 -5.36817248e-04
+ -2.34793428e-03 -2.65265197e-03  9.91129320e-04 -2.18916910e-03
+ -3.94738070e-03  3.55942946e-05 -2.77017889e-04 -1.86234596e-03
+ -1.14599906e-03 -2.31763850e-03 -2.09028328e-03 -1.33547271e-03
+ -4.25924687e-05 -1.38366173e-03 -3.81595887e-03 -4.47754154e-04
+ -3.01598043e-05 -7.18074479e-05 -8.51860400e-05 -1.07107785e-03
+ -2.17463548e-03 -1.88605111e-03  2.20146837e-05 -4.12366024e-04
+ -7.67129316e-04 -1.22320756e-03 -1.18103220e-03 -2.74738402e-03
+ -3.27750737e-03 -2.14376274e-03 -2.58907784e-03 -2.82936147e-03
+ -2.42768546e-03 -2.20963480e-03 -3.41605711e-03 -2.71595342e-03
+ -2.31299486e-03 -1.02219132e-03 -3.44510231e-05 -1.65607162e-03
+ -1.71211177e-03 -1.23276349e-03 -3.02757558e-03 -2.56123729e-03
+ -2.28008363e-03 -1.34654932e-03  7.61997273e-06 -1.96277635e-03
+ -2.37798420e-03 -1.77240639e-03 -1.77508395e-03 -1.66522515e-03
+ -1.84974425e-04 -2.11094412e-03 -1.22521591e-03 -1.63131470e-03
+  2.80107037e-05 -2.13489109e-03 -7.57452484e-04 -2.76298594e-03
+ -1.35987206e-05 -1.95899080e-03 -2.21107538e-03 -2.29875706e-03
+ -2.75656179e-03 -3.25099163e-03 -2.08684832e-03 -2.95055781e-03
+ -1.67901606e-03 -1.67831599e-04 -1.35761932e-04 -3.81273962e-03
+ -5.15856903e-04 -2.14636422e-03 -2.10912540e-03 -2.01360655e-03
+ -2.16201503e-03 -2.52634197e-03 -2.10502344e-03 -3.04157744e-03
+ -6.83494098e-04  3.80824812e-04 -1.07876581e-03 -4.36534218e-05
+ -9.52175034e-06 -1.13246870e-03 -2.11213186e-03  2.90161653e-05
+ -2.02586760e-03 -5.24534154e-05 -1.33508721e-03 -8.88514177e-05
+ -6.89425807e-04 -4.21669262e-03 -1.93916969e-03 -8.07672275e-04
+ -2.81436407e-03 -1.26214274e-03 -3.61008767e-03 -1.47425617e-03
+ -2.71783793e-03 -3.92896966e-04 -3.25797841e-04 -4.15770702e-03
+ -2.86077700e-04 -3.79577540e-04 -2.89625590e-03 -1.20287747e-03
+ -4.71543831e-04 -6.57869895e-04 -1.45797512e-03 -1.71338955e-04
+ -2.31176155e-03 -1.65549907e-03 -1.78201818e-03  8.18039994e-07
+ -2.72980314e-03 -6.49459812e-05 -4.63306432e-03 -1.53246453e-03
+ -9.41511483e-04 -2.57626004e-04 -6.93530964e-03 -3.88414393e-03
+ -1.60606204e-03 -1.19151531e-03 -2.70919926e-03 -1.63578600e-03
+ -1.28616908e-03 -1.65263960e-03  1.93878419e-05 -2.78813975e-03
+ -4.46180916e-05 -2.47994227e-03 -6.62623421e-05 -2.24819661e-03
+ -1.27433800e-03 -5.54204089e-04  2.27698823e-06 -4.06278498e-05
+ -1.74584288e-04 -1.82217674e-03 -9.74140107e-05 -1.23047952e-03
+ -1.76106408e-03 -2.13735439e-03 -6.49449155e-04 -2.52733750e-03
+ -2.60964717e-03 -2.17689336e-03 -2.44015855e-03 -2.95442568e-03
+ -2.47900883e-03  7.99775580e-06 -2.83227055e-05 -1.64954127e-03
+ -3.31325124e-03 -3.59154690e-03 -1.37419070e-03 -2.57283537e-03
+  2.14009700e-05 -2.46967377e-03 -8.59690946e-04 -4.87770495e-04
+ -6.74239883e-06 -8.68598983e-04 -2.41437081e-03 -1.78756806e-04
+ -1.55100530e-05 -2.30092307e-03 -2.24681704e-03 -1.65885869e-03
+ -5.47240827e-04 -3.59535193e-04 -1.42435242e-03 -6.97680073e-04
+  1.98868977e-05 -1.96306189e-03 -2.52130510e-04 -3.05996680e-03
+ -2.71529744e-05 -3.65834431e-03 -1.88213804e-03 -2.38109871e-03
+ -1.49202263e-03 -1.79574368e-03  2.30521172e-05 -1.14673479e-03
+ -8.65363572e-04 -2.40464951e-03 -4.26101709e-03 -3.20134476e-03
+ -1.41657884e-03 -6.11751329e-05  2.59336318e-05 -5.40582583e-06
+  1.16028647e-05 -2.47508070e-03 -4.77157658e-04 -2.78966706e-03
+ -1.47581434e-03 -2.73617106e-05 -5.19974371e-03 -2.41608958e-03
+ -1.08290341e-04  3.65604344e-05  1.35744660e-05 -5.03535221e-04
+ -8.98100239e-04 -1.26827546e-03 -1.64278490e-03 -2.49169397e-03
+ -3.79335362e-03 -2.48113919e-03 -2.35038583e-03 -1.58983170e-03
+ -3.71806969e-03 -5.33890165e-04 -2.97337547e-03 -1.75657368e-03
+  3.31567118e-05 -2.20665113e-03 -9.69976776e-04 -8.52316091e-05
+  1.07925420e-05 -2.92952690e-03 -3.68442494e-04 -2.61832700e-03
+ -4.59135053e-05 -3.21651378e-03 -2.51588715e-03 -2.19242069e-04
+ -1.89271523e-04 -1.73489268e-03 -1.96101753e-05 -3.00158645e-03
+ -1.40071930e-03 -6.75537134e-05 -1.55647691e-03 -2.44882588e-03
+ -2.32084010e-03 -1.53046610e-04 -1.60767497e-03 -1.96906563e-05
+ -1.84378681e-03 -1.33928141e-04  1.94036441e-06 -1.24694138e-05
+ -2.06406411e-03 -2.78572826e-03 -6.96925242e-04 -2.94600383e-03
+ -1.42860101e-03 -1.89308677e-03 -4.65452262e-05 -9.04066492e-05
+ -3.40536526e-04 -2.95293035e-03 -1.05937245e-03 -1.61614201e-03
+ -5.27169815e-04 -1.71602153e-03 -7.61583108e-04 -1.50315768e-04
+ -2.17014545e-03 -3.09196995e-03 -9.12367430e-04 -3.97884951e-06
+ -1.36478544e-04 -2.10309594e-03 -2.13419395e-03 -2.84129618e-03
+ -7.28981678e-05 -3.31641646e-03 -9.81036485e-04 -2.65446077e-03
+ -3.12687225e-03 -2.79280177e-04 -2.55173722e-03 -4.41782022e-05
+ -4.40003722e-04 -4.25704118e-03 -1.38698203e-04 -9.58054927e-07
+ -1.65224896e-03 -1.05634137e-03 -1.58701596e-04 -1.46921306e-03
+ -2.98175394e-03 -1.11550447e-03 -2.38730604e-04 -2.87392628e-03
+ -8.59811851e-04 -1.50263584e-03 -5.16407077e-03 -7.52993680e-07
+ -1.42321136e-03 -5.44205700e-04 -1.80887789e-03 -1.83915677e-05
+ -7.04925570e-05 -1.35068840e-04 -1.15211636e-03 -2.10362586e-03
+ -1.76243667e-03  9.42999095e-04 -1.63996770e-03 -4.47378209e-04
+ -2.41757205e-03 -1.15646417e-03 -1.82435450e-03 -5.95875620e-05
+ -2.51386851e-03 -6.36626948e-05 -3.15694937e-03 -3.01823206e-03
+ -3.32592535e-03 -2.72266201e-04 -3.29646231e-04 -1.41075628e-03
+ -1.57877530e-03 -2.59520947e-03 -2.35765888e-03 -1.62399865e-03
+ -1.58792478e-03 -2.59297437e-03 -2.47997938e-03 -9.10255078e-04
+ -4.02190613e-03 -1.85878091e-06 -4.23085067e-04 -1.10417025e-04
+ -1.03414036e-03 -1.74409434e-03 -2.65238811e-03 -3.58010096e-03
+ -1.03015710e-05 -3.29873783e-03 -2.09003964e-03 -3.66330143e-03
+ -1.27025809e-03 -2.42375549e-03 -8.12955726e-04 -4.11203753e-03
+ -1.74328145e-04 -1.91306627e-03 -1.99109024e-03 -1.52343118e-03
+ -3.07430308e-03 -2.63828078e-03 -2.09187673e-03 -1.89986408e-03
+ -3.51711041e-03 -2.09750453e-05 -2.76431811e-03 -2.31738971e-03
+ -4.36235703e-03 -2.14612388e-05 -1.52131185e-04 -2.15241169e-04
+ -1.58933485e-05 -3.29358190e-03 -2.56721971e-03  3.65189077e-05
+ -1.98436364e-03 -2.55904482e-03 -3.36885076e-03 -1.76425943e-03
+ -1.07401669e-03 -2.03515746e-03 -2.57692815e-03 -2.71380579e-03
+ -2.46666069e-03 -3.40336757e-03 -3.25720521e-03 -1.50660513e-03
+ -1.61839474e-03 -2.00154322e-03 -9.39805211e-05 -2.29453383e-03
+ -2.40211528e-03 -1.75518529e-03 -8.96585064e-04 -1.23798593e-03
+ -1.15395897e-03 -1.79097105e-03 -6.21210605e-05 -2.27998551e-03
+ -1.91514004e-03 -6.79377438e-05 -6.05891281e-04 -5.41139337e-04
+ -1.06534569e-03 -2.22013445e-03 -1.54426180e-04 -2.09246546e-03
+ -3.08960035e-04 -1.79855611e-03 -5.31523875e-04 -7.74711070e-04
+ -9.26711794e-04 -2.75193027e-03  1.02247650e-05  3.10917672e-05
+ -3.43151130e-03  1.99034349e-05 -1.66661868e-03 -4.36351059e-03
+ -1.82567307e-03 -2.47335164e-03 -3.38361701e-04 -1.59036934e-03
+ -5.79330706e-04  3.14971123e-05 -3.58961609e-03 -6.88528021e-05
+  3.21185434e-05 -2.16097686e-03 -3.36757593e-04 -2.71582553e-03
+ -6.46479442e-05 -2.35395345e-03 -1.48780638e-03 -2.29944281e-03
+ -2.12298320e-03  7.90698496e-06 -3.04131909e-03 -1.14440341e-04
+ -3.29155407e-03 -6.47627491e-04 -2.70366739e-03 -2.01581886e-03
+ -2.35617752e-03  1.78550275e-05 -4.24735112e-04 -1.20916307e-05
+ -2.50997894e-07 -9.52628889e-04 -2.01752403e-03 -1.44253856e-03
+ -1.72028740e-04 -2.46460677e-03 -1.27182361e-03 -1.83315413e-03
+  3.12810262e-05 -1.10923945e-03 -1.63441267e-03 -6.54170341e-04
+ -1.33440073e-03 -2.05349353e-03 -2.16195954e-03 -7.24860242e-04
+ -3.19709250e-03 -1.72264009e-03 -1.95930428e-03 -3.24552627e-03
+ -6.43229331e-04 -4.25889702e-03 -2.76051345e-03 -2.90760262e-03
+ -2.02411869e-03  1.37769548e-05 -3.38073660e-03 -6.53035515e-07
+ -3.49089417e-03 -1.90454558e-03 -2.26202758e-04 -4.40425971e-05
+ -2.38244410e-03 -1.37364497e-03 -4.01716436e-04 -2.73597041e-03
+ -2.55781923e-03 -6.06521900e-05 -8.15548391e-04 -3.01100053e-03
+ -3.01999199e-03 -1.08694216e-04 -1.12485277e-04 -3.45942242e-03
+ -6.95715086e-04 -2.27158976e-04 -1.92519318e-03 -3.46269384e-03
+ -2.41859478e-03 -1.31099215e-03 -3.15589393e-03 -1.02816970e-03
+ -3.13212998e-03 -1.38413323e-03 -1.46856554e-04 -2.78630412e-03
+ -3.78580531e-05 -2.11655574e-03 -7.09919803e-05 -1.59399650e-03
+ -1.63453652e-03 -5.66658068e-04 -9.07190185e-05 -5.12546524e-04
+ -1.53647609e-03 -1.61118122e-03 -2.12497428e-03 -2.28169876e-03
+ -5.99381506e-05 -4.15168160e-05 -3.12247704e-03 -8.75038199e-06
+ -1.63593299e-04  1.88366020e-05 -1.07007055e-04 -2.94174936e-03
+ -3.19598193e-03 -2.57977108e-03  3.49074497e-05 -1.44077386e-03
+ -3.07025147e-03 -4.44444878e-04 -2.53733516e-03 -1.83411145e-03
+ -6.69665694e-04 -1.33458815e-03 -1.08103177e-03 -3.33568560e-03
+ -1.04362720e-03 -2.64736926e-03 -7.69475761e-05 -1.01500903e-04
+ -1.82802870e-03 -7.24244690e-05 -1.86285898e-03 -1.97279900e-03
+ -1.97067305e-03 -1.42454499e-03 -7.21593962e-04 -8.80305848e-04
+ -2.95149639e-03 -1.31097083e-03 -1.30515745e-03 -2.24909476e-03
+  1.19207463e-05 -1.41841300e-03 -3.45483500e-03 -4.12782026e-04
+ -7.92018532e-04 -2.19675711e-04 -4.58235430e-04 -3.45774040e-04
+ -2.98871243e-03 -1.83656924e-03 -5.86065828e-03 -5.87365505e-03
+ -2.12864003e-03 -4.22445261e-04  6.63950072e-06 -1.10522532e-03
+ -2.25522198e-03 -1.70938571e-03  1.42521383e-03 -1.99066284e-03
+ -1.00657469e-03 -2.51810681e-03 -5.43430290e-04 -2.40028847e-03
+  1.44399126e-05 -2.14757328e-03 -2.11929871e-03 -2.82096131e-03
+ -1.13398130e-03 -7.44783889e-05 -1.40172109e-03  7.05660556e-06
+ -2.15447076e-03  3.63072315e-05 -1.89627624e-03 -3.14144263e-03
+ -1.40913049e-03  1.77388996e-05 -1.20668249e-04 -1.11841429e-03
+ -1.25572447e-05 -2.57842605e-03 -1.13265281e-03 -1.66272399e-03
+ -1.39033247e-03 -3.74895308e-04 -1.26363660e-04 -2.85438005e-03
+ -6.51357915e-04 -2.10460780e-03 -1.60904682e-03  2.83984091e-05
+ -1.36807892e-03 -2.91970601e-03 -2.53112048e-03  3.83185221e-06
+ -2.50800552e-04 -2.24715697e-03 -5.66862027e-05  3.33742678e-05
+  2.30929089e-05 -1.76253369e-03 -2.05362069e-03 -7.01156191e-04
+ -1.87223777e-03 -1.22525634e-03 -2.31158736e-03 -2.84189005e-03
+ -2.24745942e-03 -4.09620922e-03 -5.19395863e-04  1.88443193e-05
+  2.41454096e-05 -1.51122783e-04 -1.07287452e-03 -5.65531702e-04
+ -1.53623905e-03  3.47328904e-05 -6.64960678e-05 -7.06608395e-03
+ -2.51192373e-03 -1.81904202e-03 -5.22887784e-05  3.37605032e-05
+ -2.77208030e-03 -8.81796400e-05 -1.80459807e-03 -2.31704132e-04
+ -2.81122862e-03 -1.27737166e-03 -1.98457275e-03 -2.55339425e-03
+  4.64556314e-04 -8.56998323e-04 -2.69319309e-03 -2.33898508e-03
+ -1.94598706e-05 -3.24957384e-03 -1.77197900e-04 -7.30131932e-04
+ -2.60207387e-03  1.49172864e-05 -2.37098492e-03 -3.48154661e-04
+ -7.00875794e-05 -1.77328691e-03 -8.31663705e-04 -7.84920400e-04
+ -1.21092888e-03 -3.83661125e-03 -9.95517190e-05 -4.43964564e-04
+  2.01625177e-05 -4.62133431e-04 -1.96071031e-03 -6.46516191e-05
+ -3.18985913e-03 -2.41520392e-03 -2.89257987e-04 -1.15339229e-04
+ -7.69742193e-04 -3.33942484e-03 -1.84007660e-03 -1.50779177e-03
+ -2.75408305e-03 -9.30605018e-04 -3.01362957e-03 -1.94736148e-04
+ -2.86755872e-03  7.92168470e-06 -2.64825565e-04 -3.38830990e-04
+ -2.83975933e-03 -2.19775669e-05 -3.39317661e-03 -7.80566707e-05
+ -1.18504633e-03 -3.77907283e-03 -6.32826700e-04 -2.38951467e-05
+ -1.62444258e-03 -1.80574685e-03 -1.63662976e-03 -1.57845337e-03
+ -3.46665468e-03 -1.23057323e-04 -2.02500435e-03 -1.20047406e-03
+ -2.59825819e-04 -1.63994822e-03  3.68331144e-05 -6.32115233e-04
+ -2.32414975e-03 -2.64321658e-03 -1.79067264e-03 -2.03507698e-03
+  8.96793801e-06 -3.28102392e-04 -1.22165784e-05 -4.35625774e-04
+ -2.71596040e-03 -1.92911544e-04 -4.18464575e-06 -1.69684831e-03
+ -2.26713868e-03 -1.95572342e-03 -3.83927925e-04 -3.51971005e-03
+ -2.02485405e-03 -2.80367480e-03 -1.11374198e-03 -2.19680561e-03
+ -1.69390505e-04 -1.81317609e-03 -2.16106837e-03 -2.16848438e-03
+ -4.23892817e-03 -1.60793662e-03 -7.69671267e-04 -1.66371548e-04
+ -2.19273893e-03 -2.16133333e-03 -7.75782680e-04 -3.94884149e-03
+ -1.63786270e-03 -1.91096201e-03 -3.61699728e-04 -2.13652827e-03
+ -1.19670137e-03 -1.36816932e-03 -2.55731944e-03 -2.81731688e-03
+ -2.32290247e-03 -3.85288496e-03 -4.11702699e-06 -2.50450331e-05
+ -2.14965660e-03 -7.06276108e-04 -2.31564485e-04 -3.37789882e-04
+ -3.05456465e-03 -2.75286775e-03 -1.10063900e-03 -1.71442698e-03
+ -1.70404787e-04 -4.29393824e-05 -3.24112370e-03 -2.57197912e-03
+ -2.32257614e-03 -1.28331954e-04 -9.51089827e-04 -1.12414240e-03
+ -7.15252130e-06 -2.09353597e-03 -1.09803274e-03 -2.02827982e-04
+ -2.16176476e-03 -2.29944722e-03  1.83886277e-05 -1.75579937e-03
+ -1.81152127e-04 -3.06813176e-03 -2.34368385e-03 -3.13642340e-03
+ -5.41881893e-03 -3.59511820e-03 -9.61380741e-05 -2.31262920e-03
+ -2.01206014e-03 -1.87902243e-03 -2.69834131e-03 -8.11232550e-04
+  1.95488039e-05 -3.36383742e-03 -8.59482945e-04 -1.46083127e-03
+ -2.07638322e-03 -1.97710969e-03 -1.65184545e-05 -2.59485814e-03
+ -8.01116195e-04 -6.81990315e-05 -3.32615540e-03]
+Energies_ff[samples]: [-2.03271143e-03 -1.70202182e-03 -1.27277223e-03 -2.25709659e-03
+ -1.66955755e-03 -1.26667696e-04  3.82105383e-04 -2.21059405e-03
+ -7.27067523e-04 -1.74220543e-03 -1.05316805e-03 -2.20005285e-05
+ -1.06528606e-03 -1.90606743e-03 -2.07101401e-03 -1.72778708e-03
+ -1.05442524e-03 -4.30569710e-06 -1.26392218e-03 -7.33600351e-04
+ -1.01583381e-05 -4.58177669e-04 -4.06064164e-06 -9.50356448e-04
+ -2.34788998e-03 -1.42419418e-03 -8.10414398e-08 -1.95020401e-03
+ -2.24579016e-03 -4.44089210e-16 -1.99546261e-03 -4.44089210e-16
+ -2.39896435e-03 -1.77061595e-03 -3.48765236e-04 -6.56335701e-07
+ -2.54268846e-03 -1.67119723e-03 -2.27207665e-03 -1.43062009e-03
+ -2.12267978e-03 -1.02763201e-03 -1.46452721e-03 -2.05625329e-03
+ -1.40126362e-03 -1.65667093e-04 -1.89108778e-03 -1.47531143e-06
+ -1.26696003e-05 -1.13177799e-03 -7.89262384e-04 -2.69153742e-03
+ -1.68237338e-03 -1.64723235e-03 -4.73205882e-05 -5.02322896e-04
+ -1.55155531e-03 -2.37556814e-03 -2.33042338e-03 -2.07891129e-03
+ -2.69250215e-03 -7.77671553e-04 -8.16016139e-04 -1.81604514e-03
+ -6.95929441e-04 -1.27227185e-03 -2.12348455e-03 -2.04797756e-03
+ -8.42727111e-07 -9.30737975e-04 -8.73518123e-05 -1.80656878e-03
+ -1.63759527e-06 -1.88257033e-03 -6.92601289e-04 -1.19142430e-03
+ -6.13541886e-05 -1.84945626e-04 -1.69530419e-03 -5.71702439e-04
+ -2.37109226e-03 -1.78125177e-03 -2.30052275e-05 -1.12727844e-03
+ -1.13471871e-03 -2.09810065e-03 -2.30908026e-03 -2.04222830e-03
+ -7.61397911e-06 -1.47531673e-03 -9.32888800e-04 -2.28929794e-03
+ -2.12553849e-03 -2.20344880e-03 -7.72950438e-05 -6.16769995e-04
+  0.00000000e+00 -6.97552337e-04 -6.09896586e-04 -1.20583156e-03
+ -1.91348992e-03 -8.66930350e-04 -9.07881405e-05 -1.10716783e-04
+ -8.70239661e-05 -1.81989070e-03 -5.89139898e-04 -2.18691906e-03
+ -4.29117347e-04 -1.82016558e-03 -4.79633014e-04 -4.44954001e-06
+ -3.05403498e-06 -2.01450428e-03 -4.93350637e-05 -9.43744159e-04
+ -4.60987346e-06 -1.16813668e-03 -2.22143510e-03 -2.25118095e-03
+ -2.09615867e-03 -2.38256781e-03 -9.70599496e-05 -1.51407003e-03
+ -1.30945123e-03 -4.82794846e-04 -2.12650677e-04 -2.31722224e-04
+ -1.65428040e-03 -1.41534497e-03 -1.52863031e-03 -6.84477853e-04
+ -5.67398964e-04 -1.40246749e-03 -6.34387587e-08 -7.38236863e-06
+ -6.56369919e-04 -1.48530062e-03 -4.99002646e-06 -2.19041471e-03
+ -1.61579534e-03 -3.30995084e-05 -1.77345298e-03 -6.63595737e-05
+ -1.08798445e-03 -9.09072316e-04 -1.25121118e-03 -2.41334084e-03
+ -1.61360499e-04 -9.57565480e-04 -2.44421482e-03 -1.68971638e-03
+ -1.97771925e-03 -1.30412843e-03 -5.07696086e-04 -7.28821702e-04
+ -5.86877670e-04 -2.10652686e-03 -2.34956422e-04 -8.15041660e-04
+ -1.23738270e-03 -1.31497299e-03 -5.35506870e-04 -6.28692316e-04
+ -9.16525065e-04 -2.27253104e-03 -2.77999415e-08 -4.44089210e-16
+ -2.36041357e-03 -3.25161904e-04 -9.47561821e-06 -1.12533859e-03
+ -1.94164445e-06 -1.25605735e-03 -9.47814804e-04 -1.63307114e-03
+ -2.13422096e-03 -1.50961760e-03 -2.32044219e-06 -6.78826142e-07
+ -1.19037018e-04 -1.59683286e-04 -6.92814983e-04 -1.73314650e-03
+ -9.82130250e-06 -1.80490297e-03 -1.44820062e-03 -3.56963448e-04
+ -2.06795928e-03 -9.70628994e-04 -2.35879865e-05 -1.55054642e-03
+ -7.79984563e-04 -3.53598077e-05 -2.20269677e-03 -2.05984699e-03
+ -2.18043173e-03 -6.81740980e-04 -1.30879894e-03 -2.33509872e-04
+ -2.24149445e-05 -1.62028703e-03 -1.20934794e-03 -2.21167829e-03
+ -2.40370602e-03 -8.25088140e-04 -4.44089210e-16 -5.01830547e-04
+  0.00000000e+00 -1.58100026e-03 -1.81430615e-03 -7.21044762e-04
+ -9.98640151e-04 -1.54501508e-03 -2.20170631e-04 -3.90543553e-09
+ -1.98443333e-03 -1.77500282e-03 -6.78622755e-04 -1.92449640e-03
+ -2.43628070e-03  0.00000000e+00 -7.16410555e-07 -1.75872993e-03
+ -8.78340109e-04 -1.64259251e-03 -1.28097947e-03 -9.73338758e-04
+ -5.44025359e-07 -1.18085116e-03 -2.61288877e-03 -3.58903731e-04
+ -7.48348473e-06 -1.74565645e-05 -2.57740677e-05 -7.01809631e-04
+ -1.41735548e-03 -1.78739970e-03 -1.45099328e-08 -3.03727941e-04
+ -6.64381430e-04 -8.47903854e-04 -8.30477470e-04 -2.57592072e-03
+ -2.23477177e-03 -1.80359776e-03 -2.18948176e-03 -1.65300284e-03
+ -2.14365253e-03 -1.41278822e-03 -2.18770585e-03 -2.15195714e-03
+ -1.49023788e-03 -7.58473558e-04 -9.13477258e-06 -1.23969161e-03
+ -2.12277208e-03 -8.56889898e-04 -2.13073949e-03 -1.94300231e-03
+ -1.83279552e-03 -1.01036959e-03 -9.16265810e-08 -1.76890950e-03
+ -1.46769902e-03 -1.30938588e-03 -1.67407816e-03 -1.41710998e-03
+ -1.05480408e-04 -1.60236303e-03 -9.43134677e-04 -1.23369399e-03
+  0.00000000e+00 -2.00292709e-03 -6.76719851e-04 -2.10277884e-03
+ -1.50733977e-06 -1.69011166e-03 -1.40961462e-03 -3.64302934e-04
+ -1.79594960e-03 -2.57874728e-03 -2.06325015e-03 -2.27978746e-03
+ -1.64177090e-03 -8.54353484e-05 -7.34737793e-05 -1.48388644e-03
+ -3.98477808e-04 -1.42711425e-03 -1.29816678e-03 -2.04532750e-03
+ -1.48810108e-03 -2.03215428e-03 -1.40155003e-03 -1.14559015e-04
+ -6.84421604e-04  2.98875109e-04 -9.88891707e-04 -1.24398780e-05
+ -7.51310282e-07 -8.91648542e-04 -2.37721022e-04 -4.44089210e-16
+ -1.40863388e-03 -1.29410865e-05 -1.13241476e-03 -2.83340759e-05
+ -4.86362766e-04 -2.35386620e-03 -1.62731876e-03 -8.04056592e-04
+ -1.70256146e-03 -4.44089210e-16 -2.18041906e-03 -1.11461442e-03
+ -1.95967373e-03 -3.09886947e-04 -2.31231870e-04 -2.35024673e-03
+ -2.09913859e-04 -2.87674583e-04 -1.65803680e-03 -7.85786325e-09
+ -3.26453893e-04 -4.63695588e-04 -1.39875695e-03 -8.60636002e-05
+ -2.09640211e-03 -1.37082855e-03 -9.79622624e-04 -3.20124447e-07
+ -9.82130277e-04 -1.90874482e-05 -4.99782734e-04 -1.17239996e-03
+ -8.44152887e-04 -1.55412455e-04 -1.97262798e-03 -2.56721875e-03
+ -1.83373557e-04 -9.64036969e-04 -1.78551410e-03 -1.18797884e-03
+ -6.01334456e-04 -1.22117852e-03 -3.02445491e-08 -1.81782049e-03
+ -1.26204119e-05 -4.09456326e-04 -2.09646845e-05 -1.82815818e-03
+ -8.74206231e-04 -4.37256487e-04 -1.00075054e-06 -6.33739806e-06
+ -9.81965391e-05 -1.48883957e-03 -4.26366250e-05 -1.01740410e-03
+ -1.31603990e-03 -2.14461445e-03 -4.89136084e-04 -1.93058793e-03
+ -4.99005635e-04 -2.20576504e-03 -1.67423998e-03 -1.99126224e-03
+ -2.01513222e-03 -9.76723777e-08 -7.58302349e-06 -1.55005413e-03
+ -2.40158170e-03 -2.30653809e-03 -1.82929723e-03 -1.77554875e-03
+ -1.27511108e-08 -2.09898929e-05 -7.04289534e-04 -2.58644939e-04
+ -2.11188419e-06 -7.93951819e-04 -1.47842146e-03 -1.06614177e-04
+ -1.15003340e-06 -1.86988869e-03 -7.34496567e-04 -1.27475632e-03
+ -4.08953871e-04 -2.65063720e-04 -1.27370278e-03 -6.13641406e-04
+ -1.60455720e-08 -1.99262220e-03 -1.68068357e-04 -2.09593891e-03
+ -3.54610582e-06 -1.99329345e-03 -1.41684222e-03 -1.82330271e-03
+ -1.16375110e-03 -1.01654305e-03 -4.44089210e-16 -3.82605257e-04
+ -6.57609013e-04 -1.70438239e-03 -2.54671372e-03 -1.94847378e-03
+ -1.10479073e-03 -2.05912079e-05 -4.44089210e-16 -1.15683945e-06
+ -1.15662166e-07 -7.00141920e-04 -3.31347585e-04 -2.38138682e-03
+ -1.17926028e-03 -6.41568075e-06 -2.04074835e-03 -1.87937468e-03
+ -3.79558636e-05  0.00000000e+00 -4.58512361e-08 -4.57431895e-04
+ -6.61612356e-04 -1.06218066e-03 -8.92393642e-04 -1.75617275e-03
+ -2.09396570e-03 -2.06189655e-03 -1.67682235e-03 -1.52070864e-03
+ -2.16278872e-03 -3.79737031e-04 -1.65413271e-03 -1.33668653e-03
+ -4.44089210e-16 -1.40526892e-03 -2.96108823e-05 -3.38600626e-05
+ -1.38741194e-07 -1.48963093e-03 -2.87112703e-04 -1.65581067e-03
+ -1.24141213e-05 -2.14368002e-03 -2.06813019e-03 -1.37259157e-04
+ -1.11006022e-04 -1.48309146e-03 -2.91280998e-06 -2.00365264e-03
+ -1.05225779e-03 -2.44282377e-05 -1.05278430e-03 -1.94340300e-03
+ -1.67977181e-03 -7.32505898e-05 -1.26419359e-03 -1.77078923e-06
+ -1.15703928e-03 -5.74987185e-05 -2.90424651e-07 -2.62197743e-06
+ -1.66171474e-03 -2.30390090e-03 -5.91645211e-04 -2.68772717e-03
+ -1.27700159e-03 -1.78866453e-03 -1.26243633e-05 -3.97207752e-05
+ -2.49812521e-04 -2.03084025e-03 -9.28357126e-04 -1.24961915e-03
+ -4.25454262e-04 -1.57423557e-03 -6.47753333e-04 -8.51757146e-05
+ -1.80043442e-03 -1.05042024e-03 -8.82685625e-04 -1.28667555e-06
+ -6.48885783e-05 -1.55798477e-03 -1.58682144e-03 -1.92853267e-03
+ -2.68105429e-05 -1.34630995e-03 -8.85716906e-04 -2.28091201e-03
+ -1.35946772e-03 -2.06471502e-04 -1.85619218e-03 -8.80739490e-06
+ -3.16838892e-04 -2.69674056e-03 -7.70173806e-05 -1.19636497e-06
+ -9.66643833e-04 -8.70755657e-04 -7.49595519e-05 -1.11989620e-03
+ -1.26699779e-03 -8.41162036e-04 -1.51120352e-04 -2.18994495e-03
+ -6.60769413e-04 -3.88561893e-04 -9.78177005e-04 -4.68005501e-07
+ -1.04569123e-03 -1.71546526e-03 -8.23759876e-04 -3.68584563e-06
+ -2.64500128e-05 -7.37035170e-05 -1.03787693e-03 -1.61442280e-03
+ -1.86753534e-03 -1.53797037e-04 -1.49515106e-03 -3.54225801e-04
+ -1.95487568e-03 -9.59256318e-04 -1.61263045e-03 -1.68504413e-05
+ -1.72820239e-03 -2.30629766e-05 -2.40856140e-03 -2.23095137e-03
+ -2.00952745e-03 -1.88708581e-04 -2.33650070e-04 -1.11721984e-03
+ -1.02318561e-03 -9.27903233e-04 -1.86708952e-03 -1.22820738e-03
+ -1.21217136e-03 -1.74300547e-03 -1.75083032e-03 -6.47181416e-04
+ -1.58680677e-03 -8.42905644e-07 -3.39233242e-04 -5.29609850e-05
+ -8.45525986e-04 -1.02256760e-03 -2.29758893e-03 -2.08940176e-03
+ -9.02933051e-07 -2.25598569e-03 -1.45453911e-03 -2.33291803e-03
+ -1.65134152e-03 -2.22833104e-03 -7.23672428e-04 -2.34558667e-03
+ -1.06521446e-04 -1.75780072e-03 -1.20501002e-03 -2.05519144e-03
+ -1.37292621e-03 -1.26798375e-03 -1.41762285e-03 -1.57436655e-03
+ -2.30196867e-03 -3.32886460e-06 -1.89917877e-03 -8.31431881e-04
+ -2.60276271e-03 -3.18224787e-06 -8.87915518e-05 -1.34367406e-04
+ -3.23122791e-06 -2.44172641e-03 -1.59732476e-03  0.00000000e+00
+ -2.06536145e-03 -1.87843101e-03 -1.96167841e-03 -1.64563907e-03
+  2.48368933e-04 -1.95445137e-03 -2.35950180e-03 -1.28948073e-03
+ -2.19975092e-03 -2.47188621e-03 -2.57407200e-03 -1.14301769e-03
+ -1.25123706e-03 -2.33253641e-03 -2.98811556e-05 -1.86043690e-03
+ -5.26990719e-04 -1.70585527e-03 -6.36950190e-04 -1.15431671e-03
+ -1.07024499e-03 -1.67525675e-03 -2.12081143e-05 -1.65026824e-03
+ -1.54372543e-03 -1.69950970e-05 -5.51442230e-04 -4.10731094e-04
+ -8.16037537e-04 -1.79123921e-03 -8.96613119e-05 -1.41849287e-03
+ -2.20001103e-04 -1.48129022e-03 -4.23651789e-04 -6.35598391e-04
+ -6.74741224e-04 -2.06704900e-03 -4.17145127e-08 -4.44089210e-16
+ -2.41017054e-03 -1.01205266e-09 -1.27973570e-03 -2.37670467e-03
+ -1.70144043e-03 -2.14121543e-03 -2.46522542e-04 -1.24293898e-03
+ -4.50128220e-04 -4.44089210e-16 -2.30398855e-03 -1.95501434e-05
+ -4.44089210e-16 -1.02227034e-03 -2.10764603e-04 -2.26457557e-03
+ -1.50226183e-05 -1.66756626e-03 -1.31293297e-03 -1.83569444e-03
+ -1.05157775e-03 -1.09642187e-07 -2.20249911e-03 -5.54177038e-05
+ -5.88401726e-05 -4.54220425e-04 -2.16318463e-03 -1.47993403e-03
+ -1.11696703e-03 -5.41263923e-09 -3.08690798e-04 -2.40125241e-06
+ -8.30388015e-07 -7.87595498e-04 -1.20862665e-03 -1.09764640e-03
+ -9.02744406e-05 -1.29904653e-03 -4.00101278e-05 -1.74677142e-03
+  0.00000000e+00 -9.02055751e-04 -1.48957831e-03 -5.15747918e-04
+ -9.27912616e-04 -1.49202004e-03 -1.54270980e-03 -5.70159848e-04
+ -2.25623461e-03  7.19312499e-06 -1.32429521e-03 -5.89838698e-04
+ -5.33734556e-04 -2.38365530e-03 -2.33281518e-03 -1.62705435e-03
+ -1.37548940e-03 -6.02208958e-08 -2.22896831e-03 -1.28411387e-06
+  1.81189978e-04 -1.36779277e-03 -1.36798284e-04 -1.22852556e-05
+ -2.04018761e-03 -1.03826367e-03 -2.76126074e-04 -2.08643184e-03
+ -2.24055904e-03 -1.46005784e-05 -6.34605588e-04 -1.27747799e-03
+ -1.80867731e-03 -5.03300687e-05 -4.13946836e-05 -2.28210009e-03
+ -5.60397512e-04 -1.40425960e-04 -1.84031857e-03 -2.23343768e-03
+ -1.84901578e-03 -1.12506794e-03 -2.20202463e-03 -7.94895031e-04
+ -1.93691576e-03 -1.08197235e-03 -7.70186131e-05 -2.23210469e-03
+ -5.56267710e-06 -1.62736818e-03 -2.25189716e-05 -1.18962527e-03
+ -1.18671148e-03 -1.68768138e-03 -3.19003189e-05 -4.51151631e-04
+ -1.29892417e-03 -1.20060464e-03 -1.49372097e-03 -1.37950268e-03
+ -1.86854331e-05 -1.12780886e-05 -1.99676384e-03 -7.06951172e-07
+ -8.28608548e-04 -3.99049611e-08 -3.53574153e-05 -1.83389292e-03
+ -2.45188036e-03 -1.68127156e-03 -4.44089210e-16 -1.50660895e-03
+ -2.20021556e-03 -3.33020732e-04 -1.76417082e-03 -1.89195623e-04
+ -5.12445709e-04 -7.60686274e-04 -7.55310883e-04 -2.11897402e-03
+ -7.76343779e-04 -1.85683590e-03 -2.85525795e-05 -4.37876698e-05
+ -1.24869116e-03 -1.75266645e-05 -1.62897894e-03 -1.28806172e-03
+ -1.18871245e-03 -1.21227919e-03 -5.09762533e-04 -6.23318113e-04
+ -2.09337848e-03 -9.47610247e-04 -9.58387872e-04 -1.57196812e-03
+ -5.86349063e-08 -1.12857029e-03 -1.05263662e-03 -3.18251007e-04
+ -5.93310041e-04 -1.35614619e-04 -3.38703316e-04 -5.62097190e-04
+ -1.91113026e-03 -1.21036781e-03 -1.06183410e-03 -2.30378303e-03
+ -1.77681721e-03 -3.55491500e-04 -3.54570982e-07 -2.44600634e-04
+ -2.25791765e-03 -1.54669378e-03  1.87366861e-03 -1.35183849e-03
+ -9.07233426e-04 -2.06228797e-03 -3.79182899e-04 -1.51707922e-03
+ -2.51671266e-08 -1.92100923e-03 -2.08051819e-03 -2.14967726e-03
+ -9.53160077e-04 -2.68232693e-05 -1.16558888e-03 -3.10863871e-07
+ -1.91110740e-03  0.00000000e+00 -8.28955685e-05 -2.69123781e-08
+ -1.13979512e-03 -8.33439984e-10 -6.17543130e-05 -1.05879077e-03
+ -2.61634802e-06 -7.91748499e-04 -9.03852975e-04 -1.03040379e-03
+ -1.04852307e-03 -2.61632304e-04 -5.60494022e-05 -1.82877217e-03
+ -5.14583391e-04 -1.47276401e-03 -1.19063792e-03  0.00000000e+00
+ -1.03422718e-03 -1.95309830e-03 -2.13254792e-03 -2.15320807e-07
+ -1.63867864e-04 -1.70663565e-03 -1.77989497e-05  0.00000000e+00
+ -4.44209114e-11 -1.66209832e-03 -1.37016309e-03 -4.95803341e-04
+ -1.68699126e-03 -1.23509027e-03 -1.60568238e-03 -2.42883419e-03
+ -1.58424295e-03 -2.40871232e-03 -4.40128316e-04 -7.80965292e-09
+  0.00000000e+00 -7.66276121e-05 -7.75766196e-04 -3.94081066e-04
+ -4.59776752e-04  0.00000000e+00 -1.55416777e-05 -1.84812658e-03
+ -1.67779029e-03 -6.89224840e-04 -8.77762259e-06  0.00000000e+00
+ -1.63284337e-03 -3.05795235e-05 -7.67197857e-04 -1.50214879e-04
+ -2.39364907e-03 -1.00463274e-03 -1.25190694e-03 -1.81593800e-03
+ -1.11930559e-03 -3.21642588e-07 -1.93871248e-03 -1.64917224e-03
+ -4.28485097e-06 -1.68165396e-03 -1.01167131e-04 -1.15081593e-04
+ -1.58615279e-03 -1.26624213e-08 -1.53183362e-03 -2.32705166e-04
+ -2.38706878e-05 -1.65938178e-03 -6.02652184e-04 -1.44121002e-03
+ -1.00519606e-03 -1.85211411e-03 -4.09925536e-05 -3.14260205e-04
+ -1.53770277e-08 -3.17070073e-04 -1.20649313e-03 -1.53889898e-05
+ -1.64204044e-03 -1.47756949e-03 -2.08395385e-04 -5.93799072e-05
+ -4.74656808e-04 -2.27436334e-03 -1.73734012e-03 -1.33045014e-03
+ -1.98140123e-03 -7.10282945e-04 -2.28608989e-03 -1.27673605e-04
+ -2.29884572e-03 -6.65791791e-08 -1.53502317e-04 -2.51226403e-04
+ -1.93712926e-03 -4.25611328e-06 -1.35599762e-03 -2.22362430e-05
+ -8.60020526e-04 -2.64205017e-03 -4.81278586e-04 -5.59579988e-06
+ -1.07786100e-03 -1.52843823e-03 -1.58079431e-03 -1.19659218e-03
+ -2.25309911e-03 -6.08019667e-05 -1.29451677e-03 -8.23185636e-04
+ -1.67826750e-04 -1.42627620e-03 -4.44089210e-16 -6.23156952e-04
+ -1.82724300e-03 -2.44004387e-03 -1.33160664e-03 -1.47504591e-03
+ -1.77130278e-07 -2.14217677e-04 -2.80278677e-06 -3.12796766e-04
+ -1.64523654e-03 -6.38275825e-05 -1.03992056e-06 -1.26516747e-03
+ -1.78881375e-03 -1.24499509e-03 -3.07987443e-04 -2.54286077e-03
+ -1.19790237e-03 -1.89545856e-03 -8.96144894e-04 -1.74376438e-03
+ -1.00111321e-04 -1.40264269e-03 -2.14097931e-03 -1.40972018e-03
+ -1.95541801e-03 -1.36845388e-03 -5.94384955e-04 -8.52490892e-05
+ -1.51614717e-03 -1.50813368e-03 -5.72773193e-04 -2.52550318e-03
+ -1.14918369e-03 -1.57057985e-03 -2.44670560e-04 -2.04921057e-03
+ -7.81561731e-04 -1.37609002e-03 -1.77500771e-03 -1.71156009e-03
+ -2.28522282e-03 -1.77807698e-03 -5.51789771e-07 -2.72994584e-06
+ -2.16296873e-03 -5.66027298e-04 -2.62517962e-04 -2.66196045e-04
+ -2.47777006e-03 -1.41904061e-03 -8.30155323e-04 -1.73439426e-03
+ -9.02251911e-05 -9.07478980e-06 -1.68682297e-03 -2.46090556e-03
+ -1.81902886e-03 -5.24364927e-05 -8.30433718e-04 -1.55769055e-03
+ -7.66074593e-07 -1.77380372e-03 -8.90174071e-04 -1.27280683e-04
+ -2.16241654e-03 -8.73505120e-04 -2.43903240e-08 -1.26577913e-03
+ -1.00589906e-04 -1.99152819e-03 -1.42499221e-03 -1.73608980e-03
+ -1.54718572e-03 -2.36802696e-03 -3.23951883e-05 -2.18498588e-03
+ -1.26426834e-03 -1.11178530e-03 -1.83005738e-03 -7.51687867e-04
+ -9.61328350e-09 -2.38971708e-03 -7.35239274e-04 -1.00417119e-03
+ -1.93134955e-03 -1.14123320e-03 -1.43654735e-06 -1.32116459e-03
+ -5.94177933e-04 -2.46878600e-05 -2.00053990e-03]
+Importance sampling at 298.0 K for      999 samples: henry coefficient =    0.261 +-    0.047 mol/kg/bar | adsorption enthalpy =   -11.82 +-     3.55 kJ/mol
+
+    ENV User:           vsc44561
+    ENV Platform:       Linux-4.18.0-372.46.1.el8_6.x86_64-x86_64-with-glibc2.2.
+    ENV                 5
+    ENV Time:           2023-04-24T10:57:30.070457
+    ENV Python version: 3.8.2 (default, Jan 18 2022, 18:17:06) [GCC 9.3.0]
+    ENV YAFF version:   1.6.0
+    ENV Current Dir:    /kyukon/data/gent/vo/000/gvo00003/vsc44561/Juul_COFs_Imp
+    ENV                 _sampling/COF-5/N2_MM3
+    ENV Command line:   ab_initio_HC_AE_comp.py
+
+  TIMER Overview of CPU time usage.
+  TIMER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  TIMER Label             Total      Own
+  TIMER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  TIMER Ewald corr.         0.0      0.0                                        
+  TIMER Ewald neut.         0.0      0.0                                        
+  TIMER Ewald reci.         0.0      0.0                                        
+  TIMER Generator           0.4      0.4 W                                      
+  TIMER Nlists              0.0      0.0                                        
+  TIMER PP ei               0.0      0.0                                        
+  TIMER PP mm3cap           0.0      0.0                                        
+  TIMER Total              11.2     10.7 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+  TIMER Valence             0.0      0.0                                        
+  TIMER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+__/\\\__________________________________________________________________/\\\____
+  \ \\\                                                                 \ \\\
+   \ \\\      End of file. Thanks for using Yaff! Come back soon!!       \ \\\
+____\///__________________________________________________________________\///__
+
+End of execution
