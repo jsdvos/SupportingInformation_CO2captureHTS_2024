@@ -1,6 +1,6 @@
 This file relates to the research done in the following paper:
 
-J. S. De Vos, XXX, V. Van Speybroeck, _High-throughput screening of covalent organic frameworks for carbon capture using machine learning_ (2023)
+J. S. De Vos, S. Ravichandran, S. Borgmans, L. Vanduyfhuys, P. Van Der Voort, S. M. J. Rogge, V. Van Speybroeck, _High-throughput screening of covalent organic frameworks for carbon capture using machine learning_ (2024)
 
 This file is part of the midterm storage (publically available under the [CC BY-SA license](https://creativecommons.org/licenses/by-sa/4.0/)) of the input files relevant in this work. In the remainder of this file, we outline in detail the workflow used in this work including references to the relevant input and output files.
 
