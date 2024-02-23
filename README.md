@@ -9,10 +9,12 @@ This file is part of the midterm storage (publically available under the [CC BY-
 The following software packages are used to perform all relevant calculations.
 
 - RASPA (version 2.0.41)
-- Yaff (version 1.6.0)
-- VASP (version 6.2)
 - Scikit-learn (version 1.1.2)
 - SHAP (version 0.41.0)
+- VASP (version 6.2)
+- Yaff (version 1.6.0)
+- Zeo++ (version 0.3)
+
 
 # Workflow
 
@@ -20,7 +22,8 @@ The SBU nomenclature within this data archive is somewhat different than the nom
 
 Some tar-files are splitted in multiple smaller files. In these cases, the original file can be restored by running:
 
-`cat file.tar.xz.* | tar xvzf -`
+`cat file.tar.gz.* | tar xvzf -`
+`cat input.tar.xz.a* | tar xJf -`
 
 ## Step 0 - Benchmark
 
@@ -151,11 +154,36 @@ The VASP input and output files are found within `VASP_input.tar.gz` and `VASP_o
 
 ## Step 1 - Ideal screening
 
-In the first step of the high-throughput screening, the working capacity and the ideal selectivity is calaculated for a diverse set of 15 000 COFs from the ReDD-COFFEE database. For the selection of the diverse database, we refer to the `extract_subset.sh` script provided in the [ReDD-COFFEE landing page](https://doi.org/10.24435/materialscloud:nw-3j). For each of these materials, three GCMC calculations have to be performed:
+### Step 1a - Determination of non-accessible probe-occupiable volume with Zeo++
+
+To check the influence of excluding inaccessible regions in the GCMC calculations of the following steps, the (non-)accessible probe-occupiable volumes of 15 000 COFs from the ReDD-COFFEE database are calculated with Zeo++. These probe-occupiable volumes are determined both for CO<sub>2</sub> and N<sub>2</sub>, for which a different probe radius are adopted. The radius of the framework atoms are defined in `mm3.rad` based on the MM3 parameters.
+
+**input**
+
+`COF.cif`, `mm3.rad`
+
+**command line**
+
+`network -r mm3.rad -volpo 1.65 1.65 3000 COF_co2.volpo COF.cif`
+`network -r mm3.rad -volpo 1.82 1.82 3000 COF_n2.volpo COF.cif`
+or
+`bash run.sh`
+
+**output**
+
+`COF_co2.volpo`
+`COF_n2.volpo`
+
+The input and output files for all COFs are stored in the `input.tar.xz` and `output.tar.xz` files, respectively.
+
+### Step 1b - COF characterization with GCMC calculations
+
+In the first step of the high-throughput screening, the working capacity and the ideal selectivity is calaculated with RASPA for a diverse set of 15 000 COFs from the ReDD-COFFEE database. Additionally, also the mixture selectivity is computed to validate our screening method in Section S2.3. For the selection of the diverse database, we refer to the `extract_subset.sh` script provided in the [ReDD-COFFEE landing page](https://doi.org/10.24435/materialscloud:nw-3j). For each of these materials, four GCMC calculations have to be performed:
 
 - `co2_ads`: Uptake of CO<sub>2</sub> at 298 K and 10 bar
 - `co2_des`: Uptake of CO<sub>2</sub> at 298 K and 0.1 bar
 - `n2_ads`: Uptake of N<sub>2</sub> at 298 K and 10 bar
+- `mix`: Uptake of a binary mixture of CO<sub>2</sub>/N<sub>2</sub> (composition 15:85) at 298 K and 10 bar
 
 **input**
 
@@ -174,9 +202,25 @@ All input folders with the respective input files are stored in the `input.tar.g
 
 ## Step 2 - Machine learning
 
-In the second step of the high-throughput screening, the working capacity and ideal selectivity are predicted for all 268 678 COFs in the ReDD-COFFEE database using machine learning (ML).  All ML calculations are performed in Python using the scikit-learn (version 1.1.2) package, whereas the SHAP (version 0.41.0) package is adopted for the SHAP analysis. The features of each material are provided in the `features.csv` file. For the calculation of these features, we refer to the [ReDD-COFFEE paper](https://doi.org/10.1039/D3TA00470H). The resulting uptakes calculated in the previous step of this high-throughput screening are summarized in the `results.csv` file. The materials that are included in the train and test sets are listed in the `structs_train.txt` and `structs_test.txt` files, respectively. Three steps can be recognized in the ML workflow:
+In the second step of the high-throughput screening, the working capacity and ideal selectivity are predicted for all 268 678 COFs in the ReDD-COFFEE database using machine learning (ML).  All ML calculations are performed in Python using the scikit-learn (version 1.1.2) package, whereas the SHAP (version 0.41.0) package is adopted for the SHAP analysis. The features of each material are provided in the `features.csv` file. For the calculation of these features, we refer to the [ReDD-COFFEE paper](https://doi.org/10.1039/D3TA00470H). The resulting uptakes calculated in the previous step of this high-throughput screening are summarized in the `results.csv` file. The materials that are included in the train and test sets are listed in the `structs_train.txt` and `structs_test.txt` files, respectively. Four steps can be recognized in the ML workflow:
 
-### Step 2a: ML algorithm training
+### Step 2a: Feature reduction
+
+To test the effect of reducing the number of features, we tested the performance of ML models with a different number of features and plotted the mean absolute error as a function of the selected number of features. The features are selected with the SelectKBest method of scikit-learn. The whole workflow is implemented in the `feature_reduction.py` script. 
+
+**input**
+
+`features.csv`, `results.csv`, `structs_train.txt`, `structs_test.txt`
+
+**command line**
+
+`python feature_reduction.py`
+
+**output**
+
+`SelectKBest_TTARGET.pdf`
+
+### Step 2b: ML algorithm training
 
 For each of the 25 ML models, the combination of best-performing hyperparameters is selected with 10-fold cross-validation. After running the `run.py` script with the `train` argument, the cross-validation results are stored in the `train_MODELTARGET.csv` files, where `MODEL` is the adopted ML algorithm, and `TARGET` determines the predicted adsorption property:
 
@@ -198,7 +242,7 @@ For each of the 25 ML models, the combination of best-performing hyperparameters
 
 `train_MODELTARGET.csv`
 
-### Step 2b: ML algorithm predictions
+### Step 2c: ML algorithm predictions
 
 Once the ideal hyperparameters are selected, the ML algorithms can be adopted to predict the different adsorption properties. This can be executed by running the `run.py` script with the `predict` argument. The resulting predictions for each model and target are stored in the `test_MODELTARGET.csv` and `exp_MODELTARGET.csv` files. The files with the prefix `test_` contain the ML predictions on the 4997 COFs in the test set, together with their actual GCMC values, whereas the files with the prefix `exp_` contain the ML predictions for all 268 678 COFs in the ReDD-COFFEE database.
 
@@ -214,7 +258,7 @@ Once the ideal hyperparameters are selected, the ML algorithms can be adopted to
 
 `test_MODELTARGET.csv`, `exp_MODELTARGET.csv`
 
-### Step 2c: SHAP analysis
+### Step 2d: SHAP analysis
 
 To gain insight in the importance of each feature in the ML prediction, a SHAP analysis is performed on the test set. For each material, this analysis assigns to each feature a SHAP value that determines how much that specific feature contributes to the predicted outcome. Adding all SHAP values to the mean expected outcome provides the actual prediction of the ML algorithm. 
 
@@ -258,7 +302,12 @@ All input folders with the respective input files are stored in the `input.tar.g
 
 ## Step 4 - Analysis
 
-In the last step of the high-throughput screening, the CO<sub>2</sub> six best-performing 2D and 3D COFs are visualized. Therefore, a mixture calculation is performed for each material with a higher number of Monte Carlo steps (100 000).
+### Step 4a - Extended characterization of best-performing COFs
+
+To further characterize the best-performing COFs in pressure swing adsorption, additional performance evaluation metrics are computed, as explained in Section S5.3. Therefore, the CO<sub>2</sub> and N<sub>2</sub> uptakes at different conditions than already obtained in previous steps are determined with two additional GCMC calculations for the top-20 of 2D and 3D COFs.
+
+- `n2_des`: Uptake of N<sub>2</sub> at 298 K and 0.1 bar
+- `mix`: Uptake of a binary mixture of CO<sub>2</sub>/N<sub>2</sub> (composition 15:85) at 298 K and 0.1 bar
 
 **input**
 
@@ -273,7 +322,26 @@ In the last step of the high-throughput screening, the CO<sub>2</sub> six best-p
 
 `raspa.log`, `raspa.err`, `CrashRestart`, `Restart`, `Movies`, `VTK`, `Output`
 
-All input folders with the respective input files are stored in the `input.tar.gz` file. In this case, the visualization files in the `Movies` folder are most interesting, since they contain the location of the CO<sub>2</sub> molecules at each step. These files have the title `Movie_cof_unitcells_298.000000_1000000.000000_component_co2_0.pdb`, where `cof` is the COF name and `unitcells` determines the number of unit cells in the simulation domain. 
+All input folders with the respective input files are stored in the `input.tar.xz` file, whereas all RASPA output files are provided in the `output.tar.xz` file. The resulting uptakes and enthalpies are stored in the `data` folder using the [AIF (adsorption information format)](https://adsorptioninformationformat.com/) format.
+
+### Step 4b - Visualization of the CO<sub>2</sub> distribution
+
+In the last step of the high-throughput screening, the CO<sub>2</sub> distributions in the six best-performing 2D and 3D COFs are visualized. Therefore, a mixture calculation is performed for each material with a higher number of Monte Carlo steps (100 000).
+
+**input**
+
+`COF.cif`, `co2.def`, `n2.def`,  `pseudo_atoms.def`, `force_field_mixing_rules.def`, `force_field.def`, `simulation.input`, `restart.input`
+
+**command line**
+
+`simulate -i simulation.input > raspa.log 2> raspa.err`
+( or `simulate -i restart.input > raspa.log 2> raspa.err` if the job had to be restarted)
+
+**output**
+
+`raspa.log`, `raspa.err`, `CrashRestart`, `Restart`, `Movies`, `VTK`, `Output`
+
+All input folders with the respective input files are stored in the `input.tar.gz` file. In this case, the visualization files in the `Movies` folder are most interesting, since they contain the location of the CO<sub>2</sub> molecules at each step. These files have the title `Movie_cof_unitcells_298.000000_1000000.000000_component_co2_0.pdb`, where `cof` is the COF name and `unitcells` determines the number of unit cells in the simulation domain. A snapshot of each movie is included in the `snapshots` folder.
 
 The `Movie.pdb` file can be converted to a binary NumPy file, _i.e._ `density_co2.npy`, containing the CO<sub>2</sub> density using the `convert_xyz_npy.py` script. Afterwards, the density is stored in the `density_co2.cube` file, together with the COF atomic positions, which can be read by VMD or VESTA for visualization. This file can be generated with the `writecube_v2.py` script.
 
